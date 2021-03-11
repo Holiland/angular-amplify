@@ -12,3 +12,4 @@ This repository contains two scripts that enable **ultra-large image generation*
 
 - Added Fast Mode for Tiled VAE, which increase the speed by 5X and eliminated the need for extra RAM.
 - Now you can use 16GB GPU for 8K images, and the encoding/decoding process will be around 25 seconds. For 4k images, the process completes almost instantly.
+- If you encountered VAE NaN or black image output:
