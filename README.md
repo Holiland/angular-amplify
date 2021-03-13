@@ -15,3 +15,5 @@ This repository contains two scripts that enable **ultra-large image generation*
 - If you encountered VAE NaN or black image output:
   - Use the OpenAI provided 840000 VAE weights. This usually solves the problem.
   - Use --no-half-vae on startup is also effective.
+
+## MultiDiffusion
