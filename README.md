@@ -17,3 +17,7 @@ This repository contains two scripts that enable **ultra-large image generation*
   - Use --no-half-vae on startup is also effective.
 
 ## MultiDiffusion
+
+Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce-reuse-recycle/) seems to achieve **theoretically** better results in local control than MultiDiffusion. We are investigating their differences and may provide an implementation in this repo.
+
+****
