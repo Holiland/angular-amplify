@@ -33,3 +33,5 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
     - A checkpoint that good at drawing details (e.g., trained on high resolution images) can add amazing details to your image.
     - Some friends have found that using a **full checkpoint** instead of a pruned one yields much finer results.
   - **Don't include any concrete objects in your positive prompts.**  Otherwise the results get ruined.
+      - Just use something like "highres, masterpiece, best quality, ultra-detailed unity 8k wallpaper, extremely clear".
+  - You don't need too large tile size, large overlap and many denoising steps, or it can be slow.
