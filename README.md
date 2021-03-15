@@ -26,3 +26,10 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 
 - **MultiDiffusion is especially good at adding details to upscaled images.**
   - **Faster than highres.fix** with proper params
+  - Much finer results than SD Upscaler & Ultimate SD Upscaler
+- **How to use:**
+  - **The checkpoint is crucial**. 
+    - MultiDiffusion works very similar to highres.fix, so it highly relies on your checkpoint.
+    - A checkpoint that good at drawing details (e.g., trained on high resolution images) can add amazing details to your image.
+    - Some friends have found that using a **full checkpoint** instead of a pruned one yields much finer results.
+  - **Don't include any concrete objects in your positive prompts.**  Otherwise the results get ruined.
