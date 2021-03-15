@@ -21,3 +21,8 @@ This repository contains two scripts that enable **ultra-large image generation*
 Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce-reuse-recycle/) seems to achieve **theoretically** better results in local control than MultiDiffusion. We are investigating their differences and may provide an implementation in this repo.
 
 ****
+
+**Fast ultra-large images refinement (img2img)**
+
+- **MultiDiffusion is especially good at adding details to upscaled images.**
+  - **Faster than highres.fix** with proper params
