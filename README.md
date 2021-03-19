@@ -39,3 +39,4 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
   - **CFG scale can significantly affect the details**, together with a proper sampler.
     - A large CFG scale (e.g., 14) gives you much more details. For samplers,I personally prefer Euler a and DPM++ SDE Karras.
   - You can control how much you want to change the original image with **denoising strength from 0.1 - 0.6**.
+  - If your results are still not as satisfying as mine, [see our discussions here.](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/issues/3)
