@@ -49,3 +49,5 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
   - ![highres](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/highres.jpeg?raw=true)
 
 ****
+
+**Wide Image Generation (txt2img)**
