@@ -54,3 +54,10 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 
 - txt2img panorama generation, as mentioned in MultiDiffusion.
   - All tiles share the same prompt currently.
+  - **Please use simple positive prompts to get good results**, otherwise the result will be pool.
+  - We are urgently working on the rectangular & fine-grained prompt control.
+
+- Example - masterpiece, best quality, highres, city skyline, night.
+- ![panorama](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/city_panorama.jpeg?raw=true)
+
+****
