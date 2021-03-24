@@ -51,3 +51,6 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 ****
 
 **Wide Image Generation (txt2img)**
+
+- txt2img panorama generation, as mentioned in MultiDiffusion.
+  - All tiles share the same prompt currently.
