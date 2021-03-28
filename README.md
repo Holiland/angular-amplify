@@ -61,3 +61,5 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 - ![panorama](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/city_panorama.jpeg?raw=true)
 
 ****
+
+**It can cooperate with ControlNet** to produce wide images with control.
