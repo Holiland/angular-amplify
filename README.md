@@ -63,3 +63,9 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 ****
 
 **It can cooperate with ControlNet** to produce wide images with control.
+
+- You cannot use complex positive prompts currently. However, you can use ControlNet.
+- Canny edge seems to be the best as it provides sufficient local controls.
+- Example: 22020 x 1080 ultra-wide image conversion 
+  - Masterpiece, best quality, highres, ultra-detailed 8k unity wallpaper, bird's-eye view, trees, ancient architectures, stones, farms, crowd, pedestrians
+  - Before: [click for the raw image](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/ancient_city_origin.jpeg)
