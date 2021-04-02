@@ -75,3 +75,6 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 - Example: 2560 * 1280 large image drawing
   - ControlNet canny edge
   - ![Your Name](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/yourname_canny.jpeg?raw=true)
+  - ![yourname](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/yourname.jpeg?raw=true)
+
+****
