@@ -78,3 +78,10 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
   - ![yourname](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/yourname.jpeg?raw=true)
 
 ****
+
+### Advantages
+
+- Draw super large resolution (2k~8k) image in both txt2img and img2img
+- Seamless output without any post-processing
+
+### Drawbacks
