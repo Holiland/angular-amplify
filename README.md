@@ -88,3 +88,6 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 
 - We haven't optimized it much, so it can be **slow especially for very large images** (8k) and with ControlNet.
 - **Prompt control is weak.** It will produce repeated patterns with strong positive prompts, and the result may not be usable.
+- The gradient calculation is not compatible with this hack. It will break any backward() or torch.autograd.grad() that passes UNet.
+
+### How it works (so simple!)
