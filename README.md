@@ -94,3 +94,5 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 
 1. The latent image is split into tiles.
 2. The tiles are denoised by the original sampler for one time step.
+3. The tiles are added together but divided by how many times each pixel is added.
+4. Repeat 2-3 until all timesteps are completed.
