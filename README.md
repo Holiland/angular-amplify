@@ -91,3 +91,6 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 - The gradient calculation is not compatible with this hack. It will break any backward() or torch.autograd.grad() that passes UNet.
 
 ### How it works (so simple!)
+
+1. The latent image is split into tiles.
+2. The tiles are denoised by the original sampler for one time step.
