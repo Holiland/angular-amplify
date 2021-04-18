@@ -98,3 +98,9 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 4. Repeat 2-3 until all timesteps are completed.
 
 ****
+
+## Tiled VAE
+
+**This script is currently production-ready**
+
+The `vae_optimize.py` script is a wild hack that splits the image into tiles, encodes each tile separately, and merges the result back together. This process allows the VAE to work with giant images on limited VRAM (~10 GB for 8K images!). 
