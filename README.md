@@ -106,3 +106,7 @@ Note: [The latest sampler by Google](https://energy-based-model.github.io/reduce
 The `vae_optimize.py` script is a wild hack that splits the image into tiles, encodes each tile separately, and merges the result back together. This process allows the VAE to work with giant images on limited VRAM (~10 GB for 8K images!). 
 
 Remove --lowvram and --medvram to enjoy!
+
+### Advantages
+
+- The tiled VAE work with giant images on limited VRAM (~12 GB for 8K images!)
