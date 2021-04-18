@@ -110,3 +110,7 @@ Remove --lowvram and --medvram to enjoy!
 ### Advantages
 
 - The tiled VAE work with giant images on limited VRAM (~12 GB for 8K images!)
+- Unlike [my friend's implementation](https://github.com/Kahsolt/stable-diffusion-webui-vae-tile-infer) and the HuggingFace diffuser's VAE tiling options that averages the tile borders, this VAE tiling removed attention blocks and use padding tricks.  The decoding results are mathematically identical to that of not tiling, i.e., **it will not produce seams at all.**
+- The script is extremely optimized with tons of tricks. Cannot be faster!
+
+### Drawbacks
