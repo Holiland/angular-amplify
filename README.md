@@ -117,3 +117,5 @@ Remove --lowvram and --medvram to enjoy!
 
 - NaNs occassionally appear.  We are figuring out the root cause and trying to fix.
 - Similarly, the gradient calculation is not compatible with this hack. It will break any backward() or torch.autograd.grad() that passes VAE.
+
+### How it works
