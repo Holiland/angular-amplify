@@ -119,3 +119,7 @@ Remove --lowvram and --medvram to enjoy!
 - Similarly, the gradient calculation is not compatible with this hack. It will break any backward() or torch.autograd.grad() that passes VAE.
 
 ### How it works
+
+1. The image is split into tiles and padded with 11/32 pixels' in decoder/encoder.
+2. When Fast Mode is disabled:
+   1. The original VAE forward is decomposed into a task queue and a task worker, which start to process each tile.
