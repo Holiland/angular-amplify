@@ -123,3 +123,6 @@ Remove --lowvram and --medvram to enjoy!
 1. The image is split into tiles and padded with 11/32 pixels' in decoder/encoder.
 2. When Fast Mode is disabled:
    1. The original VAE forward is decomposed into a task queue and a task worker, which start to process each tile.
+   2. When GroupNorm is needed, it suspends, stores current GroupNorm mean and var, send everything to RAM, and turns to the next tile.
+   3. After all GroupNorm mean and var parameters are summarized, it applies group norm to tiles and continues. 
+   4. A zigzag execution order is used to reduce unnecessary data transfer.
