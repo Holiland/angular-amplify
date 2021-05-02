@@ -133,3 +133,7 @@ Remove --lowvram and --medvram to enjoy!
    3. Each tile is separately processed without any RAM-VRAM data transfer.
 
 4. After all tiles are processed, tiles are written to a result buffer and returned.
+
+****
+
+## Installation
