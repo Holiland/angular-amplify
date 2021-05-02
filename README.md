@@ -129,3 +129,7 @@ Remove --lowvram and --medvram to enjoy!
 
 3. When Fast Mode is enabled:
    1. The original input is downsampled and passed to a separate task queue.
+   2. Its group norm parameters are recorded and used by all tiles' task queues.
+   3. Each tile is separately processed without any RAM-VRAM data transfer.
+
+4. After all tiles are processed, tiles are written to a result buffer and returned.
