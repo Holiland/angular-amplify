@@ -137,3 +137,7 @@ Remove --lowvram and --medvram to enjoy!
 ****
 
 ## Installation
+
+- Open Automatic1111 WebUI -> Click Tab "Extensions" -> Click Tab "Install from URL" -> type in the link of this repo -> Click "Install" 
+- ![installation](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/installation.png?raw=true)
+- After restart your WebUI, you shall see the following two tabs:
