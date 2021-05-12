@@ -148,3 +148,7 @@ Remove --lowvram and --medvram to enjoy!
 - Latent tile width & height: Basically, MultiDiffusion draws images tile by tile and each tile is a rectangle. Hence, this controls how large is the latent rectangle, each is 1/8 size of the actual image. Shouldn't be too large or too small (normally 64-128 is OK. but you can try other values.)
 - Latent tile overlap: MultiDiffusion uses overlapping to prevent seams and fuses two latent images. So this controls how long should two tiles be overlapped at one side. The larger this value is, the slower the process, but the result will contain fewer seams  and be more natural.
 - Latent tile batch size: allow UNet to process tiles in a batched manner. Larger values can speed up the UNet at the cost of more VRAM.
+
+### Tiled VAE param
+
+- **Move to GPU**: when you are running under --lowvram or medvram, this option will help to move the VAE to GPU temporarily and move it back later. It needs several seconds.
