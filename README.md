@@ -152,3 +152,7 @@ Remove --lowvram and --medvram to enjoy!
 ### Tiled VAE param
 
 - **Move to GPU**: when you are running under --lowvram or medvram, this option will help to move the VAE to GPU temporarily and move it back later. It needs several seconds.
+- **The two tile size params** control how large the tile should be we split for VAE encoder and decoder.
+  - Basically, larger size brings faster speed at the cost of more VRAM usage. We will dynamicly shrink the size to make it faster.
+  - You don't need to change the params at the first time of using. It will recommend a set of parameters based on hand-crafted rules. However, the recommended params may not be good to fit your device. 
+  - Please adjust according to the GPU used in the console output. If you have more VRAM, turn it larger, or vice versus.
