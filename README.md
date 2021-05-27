@@ -161,3 +161,7 @@ Remove --lowvram and --medvram to enjoy!
 - **Encoder Color Fix**: To fix the above problem, we provide a semi-fast mode that only estimate the params before downsampling. When you enable this, the slowest steps will be done in fast mode, and the remaining steps will run in legacy mode. Only enable this when you see visible color artifacts in pictures.
 
 **Enjoy!**
+
+****
+
+## Current Progress
