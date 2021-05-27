@@ -159,3 +159,5 @@ Remove --lowvram and --medvram to enjoy!
 - **Fast Decoder**: We use a small latent image to estimate the decoder params and then comput very fast. By default, it is enabled. Not recommend to disable it. If you disable it, a large amount of CPU RAM and time will be consumed.
 - **Fast Encoder**: We use a small image to estimate the encoder params; However, this is not accurate when your tile is very small and is further compressed by the encoder. Hence, it may do harm to your image's quality, especially colors.
 - **Encoder Color Fix**: To fix the above problem, we provide a semi-fast mode that only estimate the params before downsampling. When you enable this, the slowest steps will be done in fast mode, and the remaining steps will run in legacy mode. Only enable this when you see visible color artifacts in pictures.
+
+**Enjoy!**
