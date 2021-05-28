@@ -165,3 +165,7 @@ Remove --lowvram and --medvram to enjoy!
 ****
 
 ## Current Progress
+
+- We are investigating Google's latest sampler (which seems to yield better results than MultiDiffusion? We are not sure.)
+- Local prompt control is in progress. Automatic regional prompting is in consideration.
+- Video translation via MultiDiffusion frame interpolation still need proof-of-concept.
