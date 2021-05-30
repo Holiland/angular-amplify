@@ -173,3 +173,7 @@ Remove --lowvram and --medvram to enjoy!
 ****
 
 ## License
+
+These scripts are licensed under the MIT License. If you find them useful, please give me a star.
+
+Thank you!
