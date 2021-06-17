@@ -19,3 +19,7 @@
 ## MultiDiffusion
 
 ****
+
+**快速超大图像细化（img2img）**
+
+- **MultiDiffusion 特别擅长于大图像添加细节。**
