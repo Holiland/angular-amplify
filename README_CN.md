@@ -37,3 +37,5 @@
   - **更高的CFG Scale（提示强度）可以显著地使图像更尖锐并添加更多细节**。需要配合合适的采样器。
     - 比如CFG=14，sampler=DPM++ SDE Karras或者Eular a
   - 你可以通过去噪强度0.1-0.6控制修改的幅度。越低越接近原图，越高差异越大。
+  - 如果您的结果仍然不如我的那样细致，可以[参考我们的一些讨论](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/issues/3)
+- 示例：
