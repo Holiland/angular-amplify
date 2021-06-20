@@ -23,3 +23,8 @@
 **快速超大图像细化（img2img）**
 
 - **MultiDiffusion 特别擅长于大图像添加细节。**
+  - **速度比Highres快一倍**，只要参数调整合适
+  - 参数合适时，比SD Upscaler和Ultimate Upscaler产生更多的细节
+- 食用提示：
+  - **Checkpoint非常关键**
+    - MultiDiffusion工作原理和普通highres.fix很相似，不过它是一块一块地重绘。因此checkpoint很重要
