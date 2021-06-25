@@ -42,3 +42,9 @@
   - 参数：masterpiece, best quality, highres, extremely detailed, clear background, 去噪=0.4，步数=20，采样器=DPM++ SDE Karras，放大器=RealESRGAN, Tile size=96, Overlap=48, Tile batch size=8.
   - 处理前
   - ![lowres](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/lowres.jpg?raw=true)
+  - 处理后：4x放大，NVIDIA Tesla V100,
+    - 总耗时 1分55秒，其中30秒用于VAE编解码。
+    - 如果是2x放大仅需20秒
+  - ![highres](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/highres.jpeg?raw=true)
+
+****
