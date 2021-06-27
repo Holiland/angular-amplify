@@ -48,3 +48,9 @@
   - ![highres](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/highres.jpeg?raw=true)
 
 ****
+
+**宽图像生成（txt2img）**
+
+- **MultiDiffusion适合生成宽图像**，例如韩国偶像团体大合照（雾）
+- txt2img 全景生成，与 MultiDiffusion 中提到的相同。
+  - 目前所有局部区域共享相同的prompt。
