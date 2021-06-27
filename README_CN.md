@@ -56,3 +56,4 @@
   - 目前所有局部区域共享相同的prompt。
   - **因此，请使用简单的正prompt以获得良好的结果**，否则结果将很差。
   - 我们正在加急处理矩形和细粒度prompt控制。
+- 示例 - mastepiece, best quality, highres, city skyline, night
