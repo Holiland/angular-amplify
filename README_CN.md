@@ -57,3 +57,7 @@
   - **因此，请使用简单的正prompt以获得良好的结果**，否则结果将很差。
   - 我们正在加急处理矩形和细粒度prompt控制。
 - 示例 - mastepiece, best quality, highres, city skyline, night
+
+- ![panorama](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/city_panorama.jpeg?raw=true)
+
+****
