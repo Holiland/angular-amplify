@@ -61,3 +61,10 @@
 - ![panorama](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/city_panorama.jpeg?raw=true)
 
 ****
+
+**与 ControlNet 配合**，产生具有受控内容的宽图像。
+
+- 目前，虽然您不能使用复杂的prompt，但可以使用 ControlNet 完全控制内容。
+- Canny edge似乎是最好用的，因为它提供足够的局部控制。
+- 示例：22020 x 1080 超宽图像转换 - 清明上河图
+  - Masterpiece, best quality, highres, ultra detailed 8k unity wallpaper, bird's-eye view, trees, ancient architectures, stones, farms, crowd, pedestrians
