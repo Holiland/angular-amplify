@@ -68,3 +68,6 @@
 - Canny edge似乎是最好用的，因为它提供足够的局部控制。
 - 示例：22020 x 1080 超宽图像转换 - 清明上河图
   - Masterpiece, best quality, highres, ultra detailed 8k unity wallpaper, bird's-eye view, trees, ancient architectures, stones, farms, crowd, pedestrians
+  - 转换前：[单击下载原始图像](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/ancient_city_origin.jpeg)
+  - ![ancient city origin](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/ancient_city_origin.jpeg?raw=true)
+  - 转换后：[单击下载原始图像](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/ancient_city.jpeg)
