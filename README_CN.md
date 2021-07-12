@@ -78,3 +78,7 @@
   - ![yourname](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/yourname.jpeg?raw=true)
 
 ****
+
+  ### 优点
+
+  - 可以绘制超大分辨率（2k~8k）图，包括 txt2img 和 img2img
