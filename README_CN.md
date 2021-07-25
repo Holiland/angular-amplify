@@ -109,3 +109,8 @@
 
 - 在有限的显存上处理巨大的图像（6GB画2k，12GB画4k，16 GB 画8K），消除您对 --lowvram 和 --medvram 的需求。
 - 与[我朋友的实现](https://github.com/Kahsolt/stable-diffusion-webui-vae-tile-infer) 以及Huggingface实现不同，它不会平均化裁切的小图边界，而是删除了attention并使用边缘扩张技巧。产生的解码结果在数学上与不平铺的结果完全相同，即它从根源上不会产生任何接缝。
+- 脚本经过了极致的优化。不能更快了！
+
+### 缺点
+
+- NaN 偶尔会出现。**我们正在找出根本原因并努力解决问题**
