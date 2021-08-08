@@ -142,3 +142,7 @@
 - ![Tab](https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111/blob/docs/imgs/Tab.png?raw=true)
 
 ### MultiDiffusion 参数
+
+- 覆盖原本尺寸（文生图）：
+  - WebUI默认尺寸上限只有2048，对MultiDiffusion来说太小了
+  - 开启这个选项可以把原本对尺寸覆盖掉
