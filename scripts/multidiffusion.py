@@ -7,3 +7,6 @@
 #
 #   Techniques is not originally proposed by me, please refer to
 #   Original Project: https://multidiffusion.github.io
+#
+#   The script contains a few optimizations including:
+#       - symmetric tiling bboxes
