@@ -15,3 +15,8 @@
 #       - prompt control for each tile (in progress)
 #
 # ------------------------------------------------------------------------
+#
+#   This script hooks into the original sampler and decomposes the latent
+#   image, sampled separately and run weighted average to merge them back.
+#
+#   Advantages:
