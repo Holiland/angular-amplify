@@ -26,3 +26,10 @@
 #       text prompt for each tile.
 #
 #   Drawbacks:
+#   - Depending on your parameter settings, the process can be very slow,
+#       especially when overlap is relatively large.
+#   - The gradient calculation is not compatible with this hack. It
+#       will break any backward() or torch.autograd.grad() that passes UNet.
+#
+#   How it works (insanely simple!)
+#   1) The latent image x_t is split into tiles
