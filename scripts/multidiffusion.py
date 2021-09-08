@@ -33,3 +33,4 @@
 #
 #   How it works (insanely simple!)
 #   1) The latent image x_t is split into tiles
+#   2) The tiles are denoised by original sampler to get x_t-1
