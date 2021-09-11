@@ -34,3 +34,11 @@
 #   How it works (insanely simple!)
 #   1) The latent image x_t is split into tiles
 #   2) The tiles are denoised by original sampler to get x_t-1
+#   3) The tiles are added together, but divided by how many times each pixel
+#       is added.
+#
+#   Enjoy!
+#
+#   @author: LI YI @ Nanyang Technological University - Singapore
+#   @date: 2023-03-03
+#   @license: MIT License
