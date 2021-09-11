@@ -42,3 +42,8 @@
 #   @author: LI YI @ Nanyang Technological University - Singapore
 #   @date: 2023-03-03
 #   @license: MIT License
+#
+#   Please give me a star if you like this project!
+#
+# -------------------------------------------------------------------------
+
