@@ -56,3 +56,10 @@ from tqdm import tqdm
 import gradio as gr
 
 from modules import sd_samplers, images, devices, shared, scripts, prompt_parser, sd_samplers_common
+from modules.shared import opts, state
+from modules.sd_samplers_kdiffusion import CFGDenoiserParams
+
+
+class MultiDiffusionDelegate(object):
+    """
+    Hijack the original sampler into MultiDiffusion samplers
