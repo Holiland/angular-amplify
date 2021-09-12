@@ -75,3 +75,7 @@ class MultiDiffusionDelegate(object):
         # hook the sampler
         self.is_kdiff = sampler_name not in ['DDIM', 'PLMS', 'UniPC']
         if self.is_kdiff:
+            self.sampler = sampler.model_wrap_cfg
+            if tile_prompt:
+                self.sampler_func = self.sampler.forward
+                self.sampler.forward = self.kdiff_tile_prompt
