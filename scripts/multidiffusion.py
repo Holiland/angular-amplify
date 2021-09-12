@@ -72,3 +72,6 @@ class MultiDiffusionDelegate(object):
 
         self.steps = steps
         # record the steps for progress bar
+        # hook the sampler
+        self.is_kdiff = sampler_name not in ['DDIM', 'PLMS', 'UniPC']
+        if self.is_kdiff:
