@@ -64,3 +64,8 @@ class MultiDiffusionDelegate(object):
     """
     Hijack the original sampler into MultiDiffusion samplers
     """
+
+    def __init__(self, sampler, sampler_name, steps, 
+                 w, h, tile_w=64, tile_h=64, overlap=32, tile_batch_size=1, 
+                 tile_prompt=False, prompt=[], neg_prompt=[], 
+                 controlnet_script=None, control_tensor_cpu=False):
