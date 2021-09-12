@@ -63,3 +63,4 @@ from modules.sd_samplers_kdiffusion import CFGDenoiserParams
 class MultiDiffusionDelegate(object):
     """
     Hijack the original sampler into MultiDiffusion samplers
+    """
