@@ -69,3 +69,6 @@ class MultiDiffusionDelegate(object):
                  w, h, tile_w=64, tile_h=64, overlap=32, tile_batch_size=1, 
                  tile_prompt=False, prompt=[], neg_prompt=[], 
                  controlnet_script=None, control_tensor_cpu=False):
+
+        self.steps = steps
+        # record the steps for progress bar
