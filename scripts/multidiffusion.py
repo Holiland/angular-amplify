@@ -83,3 +83,5 @@ class MultiDiffusionDelegate(object):
             else:
                 # For K-Diffusion sampler with uniform prompt, we hijack into the inner model for simplicity
                 # Otherwise, the masked-redraw will break due to the init_latent
+                self.sampler_func = self.sampler.inner_model.forward
+                self.sampler.inner_model.forward = self.kdiff_repeat
