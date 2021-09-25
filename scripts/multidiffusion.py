@@ -85,3 +85,7 @@ class MultiDiffusionDelegate(object):
                 # Otherwise, the masked-redraw will break due to the init_latent
                 self.sampler_func = self.sampler.inner_model.forward
                 self.sampler.inner_model.forward = self.kdiff_repeat
+        else:
+            self.sampler = sampler
+            if tile_prompt:
+                raise NotImplementedError("Tile prompt is not supported yet")
