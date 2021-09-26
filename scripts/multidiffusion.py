@@ -95,3 +95,6 @@ class MultiDiffusionDelegate(object):
 
         # initialize the tile bboxes and weights
         self.w, self.h = w//8, h//8
+        if tile_w > self.w:
+            tile_w = self.w
+        if tile_h > self.h:
