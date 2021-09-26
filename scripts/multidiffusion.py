@@ -89,3 +89,9 @@ class MultiDiffusionDelegate(object):
             self.sampler = sampler
             if tile_prompt:
                 raise NotImplementedError("Tile prompt is not supported yet")
+            else:
+                self.sampler_func = sampler.orig_p_sample_ddim
+                self.sampler.orig_p_sample_ddim = self.ddim_repeat
+
+        # initialize the tile bboxes and weights
+        self.w, self.h = w//8, h//8
