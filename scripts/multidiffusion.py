@@ -102,3 +102,7 @@ class MultiDiffusionDelegate(object):
         min_tile_size = min(tile_w, tile_h)
         if overlap >= min_tile_size:
             overlap = min_tile_size - 4
+        if overlap < 0:
+            overlap = 0
+        self.tile_w = tile_w
+        self.tile_h = tile_h
