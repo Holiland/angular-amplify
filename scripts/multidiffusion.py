@@ -109,3 +109,8 @@ class MultiDiffusionDelegate(object):
         bboxes, weights = self.split_views(tile_w, tile_h, overlap)
         self.batched_bboxes = []
         self.batched_conds = []
+        self.batched_unconds = []
+        self.num_batches = math.ceil(len(bboxes) / tile_batch_size)
+        optimal_batch_size = math.ceil(len(bboxes) / self.num_batches)
+        self.tile_batch_size = optimal_batch_size
+        self.tile_prompt = tile_prompt
