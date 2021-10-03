@@ -106,3 +106,6 @@ class MultiDiffusionDelegate(object):
             overlap = 0
         self.tile_w = tile_w
         self.tile_h = tile_h
+        bboxes, weights = self.split_views(tile_w, tile_h, overlap)
+        self.batched_bboxes = []
+        self.batched_conds = []
