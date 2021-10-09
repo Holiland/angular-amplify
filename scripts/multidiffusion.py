@@ -114,3 +114,8 @@ class MultiDiffusionDelegate(object):
         optimal_batch_size = math.ceil(len(bboxes) / self.num_batches)
         self.tile_batch_size = optimal_batch_size
         self.tile_prompt = tile_prompt
+        for i in range(self.num_batches):
+            start = i * tile_batch_size
+            end = min((i + 1) * tile_batch_size, len(bboxes))
+            self.batched_bboxes.append(bboxes[start:end])
+            # TODO: deal with per tile prompt
