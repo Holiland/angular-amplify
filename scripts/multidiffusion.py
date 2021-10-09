@@ -119,3 +119,7 @@ class MultiDiffusionDelegate(object):
             end = min((i + 1) * tile_batch_size, len(bboxes))
             self.batched_bboxes.append(bboxes[start:end])
             # TODO: deal with per tile prompt
+            if tile_prompt:
+                self.batched_conds.append(prompt_parser.get_multicond_learned_conditioning(
+                    shared.sd_model, prompt[start:end], self.steps))
+                self.batched_unconds.append(prompt_parser.get_learned_conditioning(
