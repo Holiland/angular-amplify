@@ -123,3 +123,6 @@ class MultiDiffusionDelegate(object):
                 self.batched_conds.append(prompt_parser.get_multicond_learned_conditioning(
                     shared.sd_model, prompt[start:end], self.steps))
                 self.batched_unconds.append(prompt_parser.get_learned_conditioning(
+                    shared.sd_model, neg_prompt[start:end], self.steps))
+
+        # Avoid the overhead of creating a new tensor for each batch
