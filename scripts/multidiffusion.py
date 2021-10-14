@@ -126,3 +126,5 @@ class MultiDiffusionDelegate(object):
                     shared.sd_model, neg_prompt[start:end], self.steps))
 
         # Avoid the overhead of creating a new tensor for each batch
+        # And avoid the overhead of weight summing
+        self.weights = weights.unsqueeze(0).unsqueeze(0)
