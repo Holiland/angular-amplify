@@ -135,3 +135,5 @@ class MultiDiffusionDelegate(object):
 
         # For controlnet
         self.controlnet_script = controlnet_script
+        self.control_tensor_batch = None
+        self.control_params = None
