@@ -137,3 +137,9 @@ class MultiDiffusionDelegate(object):
         self.controlnet_script = controlnet_script
         self.control_tensor_batch = None
         self.control_params = None
+        self.control_tensor_cpu = control_tensor_cpu
+
+    @staticmethod
+    def splitable(w, h, tile_w, tile_h, overlap):
+        w, h = w//8, h//8
+        min_tile_size = min(tile_w, tile_h)
