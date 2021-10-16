@@ -128,3 +128,10 @@ class MultiDiffusionDelegate(object):
         # Avoid the overhead of creating a new tensor for each batch
         # And avoid the overhead of weight summing
         self.weights = weights.unsqueeze(0).unsqueeze(0)
+        self.x_buffer = None
+        # For ddim sampler we need to cache the pred_x0
+        self.x_buffer_pred = None
+        self.pbar = None
+
+        # For controlnet
+        self.controlnet_script = controlnet_script
