@@ -147,3 +147,6 @@ class MultiDiffusionDelegate(object):
             overlap = min_tile_size - 4
         non_overlap_width = tile_w - overlap
         non_overlap_height = tile_h - overlap
+        cols = math.ceil((w - overlap) / non_overlap_width)
+        rows = math.ceil((h - overlap) / non_overlap_height)
+        return cols > 1 or rows > 1
