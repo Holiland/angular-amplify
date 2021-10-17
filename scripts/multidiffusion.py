@@ -154,3 +154,6 @@ class MultiDiffusionDelegate(object):
     def split_views(self, tile_w, tile_h, overlap):
         non_overlap_width = tile_w - overlap
         non_overlap_height = tile_h - overlap
+        w, h = self.w, self.h
+        cols = math.ceil((w - overlap) / non_overlap_width)
+        rows = math.ceil((h - overlap) / non_overlap_height)
