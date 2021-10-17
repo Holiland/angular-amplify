@@ -144,3 +144,6 @@ class MultiDiffusionDelegate(object):
         w, h = w//8, h//8
         min_tile_size = min(tile_w, tile_h)
         if overlap >= min_tile_size:
+            overlap = min_tile_size - 4
+        non_overlap_width = tile_w - overlap
+        non_overlap_height = tile_h - overlap
