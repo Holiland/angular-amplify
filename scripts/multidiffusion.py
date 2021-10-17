@@ -143,3 +143,4 @@ class MultiDiffusionDelegate(object):
     def splitable(w, h, tile_w, tile_h, overlap):
         w, h = w//8, h//8
         min_tile_size = min(tile_w, tile_h)
+        if overlap >= min_tile_size:
