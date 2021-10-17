@@ -150,3 +150,7 @@ class MultiDiffusionDelegate(object):
         cols = math.ceil((w - overlap) / non_overlap_width)
         rows = math.ceil((h - overlap) / non_overlap_height)
         return cols > 1 or rows > 1
+
+    def split_views(self, tile_w, tile_h, overlap):
+        non_overlap_width = tile_w - overlap
+        non_overlap_height = tile_h - overlap
