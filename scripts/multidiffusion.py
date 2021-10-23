@@ -157,3 +157,9 @@ class MultiDiffusionDelegate(object):
         w, h = self.w, self.h
         cols = math.ceil((w - overlap) / non_overlap_width)
         rows = math.ceil((h - overlap) / non_overlap_height)
+
+        dx = (w - tile_w) / (cols - 1) if cols > 1 else 0
+        dy = (h - tile_h) / (rows - 1) if rows > 1 else 0
+
+        bbox = []
+        count = torch.zeros((h, w), device=devices.device)
