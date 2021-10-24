@@ -163,3 +163,6 @@ class MultiDiffusionDelegate(object):
 
         bbox = []
         count = torch.zeros((h, w), device=devices.device)
+        for row in range(rows):
+            y = int(row * dy)
+            if y + tile_h >= h:
