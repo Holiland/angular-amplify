@@ -168,3 +168,9 @@ class MultiDiffusionDelegate(object):
             if y + tile_h >= h:
                 y = h - tile_h
             for col in range(cols):
+                x = int(col * dx)
+                if x + tile_w >= w:
+                    x = w - tile_w
+                bbox.append((row, col, [x, y, x + tile_w, y + tile_h]))
+                count[y:y+tile_h, x:x+tile_w] += 1
+        return bbox, count
