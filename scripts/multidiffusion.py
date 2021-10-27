@@ -174,3 +174,6 @@ class MultiDiffusionDelegate(object):
                 bbox.append((row, col, [x, y, x + tile_w, y + tile_h]))
                 count[y:y+tile_h, x:x+tile_w] += 1
         return bbox, count
+
+    def repeat_con_dict(self, cond_input, bboxes):
+        cond = cond_input['c_crossattn'][0]
