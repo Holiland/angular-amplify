@@ -177,3 +177,6 @@ class MultiDiffusionDelegate(object):
 
     def repeat_con_dict(self, cond_input, bboxes):
         cond = cond_input['c_crossattn'][0]
+        # repeat the condition on its first dim
+        cond_shape = cond.shape
+        cond = cond.repeat((len(bboxes),) + (1,) * (len(cond_shape) - 1))
