@@ -182,3 +182,5 @@ class MultiDiffusionDelegate(object):
         cond = cond.repeat((len(bboxes),) + (1,) * (len(cond_shape) - 1))
         image_cond = cond_input['c_concat'][0]
         if image_cond.shape[2] == self.h and image_cond.shape[3] == self.w:
+            image_cond_list = []
+            for _, _, bbox in bboxes:
