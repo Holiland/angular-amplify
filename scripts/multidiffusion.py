@@ -184,3 +184,7 @@ class MultiDiffusionDelegate(object):
         if image_cond.shape[2] == self.h and image_cond.shape[3] == self.w:
             image_cond_list = []
             for _, _, bbox in bboxes:
+                image_cond_list.append(
+                    image_cond[:, :, bbox[1]:bbox[3], bbox[0]:bbox[2]])
+            image_cond_tile = torch.cat(image_cond_list, dim=0)
+        else:
