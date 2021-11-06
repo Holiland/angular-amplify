@@ -188,3 +188,9 @@ class MultiDiffusionDelegate(object):
                     image_cond[:, :, bbox[1]:bbox[3], bbox[0]:bbox[2]])
             image_cond_tile = torch.cat(image_cond_list, dim=0)
         else:
+            image_cond_shape = image_cond.shape
+            image_cond_tile = image_cond.repeat(
+                (len(bboxes),) + (1,) * (len(image_cond_shape) - 1))
+        return {"c_crossattn": [cond], "c_concat": [image_cond_tile]}
+
+    def kdiff_repeat(self, x_in, sigma_in, cond):
