@@ -200,3 +200,7 @@ class MultiDiffusionDelegate(object):
             x_tile_out = self.sampler_func(
                 x_tile, sigma_in_tile, cond=new_cond)
             return x_tile_out
+        return self.compute_x_tile(x_in, func)
+
+    def ddim_repeat(self, x_in, cond_in, ts, unconditional_conditioning, *args, **kwargs):
+        def func(x_tile, bboxes):
