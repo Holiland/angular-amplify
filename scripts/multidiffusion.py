@@ -195,3 +195,8 @@ class MultiDiffusionDelegate(object):
 
     def kdiff_repeat(self, x_in, sigma_in, cond):
         def func(x_tile, bboxes):
+            sigma_in_tile = sigma_in.repeat(len(bboxes))
+            new_cond = self.repeat_con_dict(cond, bboxes)
+            x_tile_out = self.sampler_func(
+                x_tile, sigma_in_tile, cond=new_cond)
+            return x_tile_out
