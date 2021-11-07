@@ -194,3 +194,4 @@ class MultiDiffusionDelegate(object):
         return {"c_crossattn": [cond], "c_concat": [image_cond_tile]}
 
     def kdiff_repeat(self, x_in, sigma_in, cond):
+        def func(x_tile, bboxes):
