@@ -204,3 +204,5 @@ class MultiDiffusionDelegate(object):
 
     def ddim_repeat(self, x_in, cond_in, ts, unconditional_conditioning, *args, **kwargs):
         def func(x_tile, bboxes):
+            if isinstance(cond_in, dict):
+                ts_tile = ts.repeat(len(bboxes))
