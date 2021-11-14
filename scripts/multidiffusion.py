@@ -215,3 +215,4 @@ class MultiDiffusionDelegate(object):
                 cond_tile = cond_in.repeat(
                     (len(bboxes),) + (1,) * (len(cond_shape) - 1))
                 ucond_shape = unconditional_conditioning.shape
+                ucond_tile = unconditional_conditioning.repeat(
