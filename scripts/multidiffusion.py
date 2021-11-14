@@ -212,3 +212,6 @@ class MultiDiffusionDelegate(object):
             else:
                 ts_tile = ts.repeat(len(bboxes))
                 cond_shape = cond_in.shape
+                cond_tile = cond_in.repeat(
+                    (len(bboxes),) + (1,) * (len(cond_shape) - 1))
+                ucond_shape = unconditional_conditioning.shape
