@@ -206,3 +206,9 @@ class MultiDiffusionDelegate(object):
         def func(x_tile, bboxes):
             if isinstance(cond_in, dict):
                 ts_tile = ts.repeat(len(bboxes))
+                cond_tile = self.repeat_con_dict(cond_in, bboxes)
+                ucond_tile = self.repeat_con_dict(
+                    unconditional_conditioning, bboxes)
+            else:
+                ts_tile = ts.repeat(len(bboxes))
+                cond_shape = cond_in.shape
