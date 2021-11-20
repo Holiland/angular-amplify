@@ -223,3 +223,8 @@ class MultiDiffusionDelegate(object):
         return self.compute_x_tile(x_in, func)
     
     def prepare_control_tensors(self):
+        """
+        Crop the control tensor into tiles and cache them
+        """
+        if self.control_tensor_batch is not None: return
+        if self.controlnet_script is None or self.control_params is not None: return
