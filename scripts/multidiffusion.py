@@ -219,3 +219,7 @@ class MultiDiffusionDelegate(object):
                     (len(bboxes),) + (1,) * (len(ucond_shape) - 1))
             x_tile_out, x_pred = self.sampler_func(
                 x_tile, cond_tile, ts_tile, unconditional_conditioning=ucond_tile, *args, **kwargs)
+            return x_tile_out, x_pred
+        return self.compute_x_tile(x_in, func)
+    
+    def prepare_control_tensors(self):
