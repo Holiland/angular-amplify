@@ -234,3 +234,7 @@ class MultiDiffusionDelegate(object):
         tensors = [param.hint_cond for param in latest_network.control_params]
         if len(tensors) == 0: return
         self.control_tensor_batch = []
+        for bboxes in self.batched_bboxes:
+            single_batch_tensors = []
+            for i in range(len(tensors)):
+                control_tile_list = []
