@@ -232,3 +232,5 @@ class MultiDiffusionDelegate(object):
         if latest_network is None or not hasattr(latest_network, 'control_params'): return
         self.control_params = latest_network.control_params
         tensors = [param.hint_cond for param in latest_network.control_params]
+        if len(tensors) == 0: return
+        self.control_tensor_batch = []
