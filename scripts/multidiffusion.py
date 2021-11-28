@@ -242,3 +242,5 @@ class MultiDiffusionDelegate(object):
                 for _, _, bbox in bboxes:
                     if len(control_tensor.shape) == 3:
                         control_tile = control_tensor[:, bbox[1] *
+                                                    8:bbox[3]*8, bbox[0]*8:bbox[2]*8].unsqueeze(0)
+                    else:
