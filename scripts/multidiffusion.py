@@ -249,3 +249,10 @@ class MultiDiffusionDelegate(object):
                     control_tile_list.append(control_tile)
                 if self.is_kdiff:
                     control_tile = torch.cat(
+                        [t for t in control_tile_list for _ in range(2)], dim=0)
+                else:
+                    control_tile = torch.cat(control_tile_list*2, dim=0)
+                if self.control_tensor_cpu:
+                    control_tile = control_tile.cpu()
+                single_batch_tensors.append(control_tile)
+            self.control_tensor_batch.append(single_batch_tensors)
