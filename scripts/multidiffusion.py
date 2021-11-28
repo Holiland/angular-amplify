@@ -247,3 +247,5 @@ class MultiDiffusionDelegate(object):
                         control_tile = control_tensor[:, :,
                                                     bbox[1]*8:bbox[3]*8, bbox[0]*8:bbox[2]*8]
                     control_tile_list.append(control_tile)
+                if self.is_kdiff:
+                    control_tile = torch.cat(
