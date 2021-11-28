@@ -238,3 +238,7 @@ class MultiDiffusionDelegate(object):
             single_batch_tensors = []
             for i in range(len(tensors)):
                 control_tile_list = []
+                control_tensor = tensors[i]
+                for _, _, bbox in bboxes:
+                    if len(control_tensor.shape) == 3:
+                        control_tile = control_tensor[:, bbox[1] *
