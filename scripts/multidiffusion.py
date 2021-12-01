@@ -256,3 +256,9 @@ class MultiDiffusionDelegate(object):
                     control_tile = control_tile.cpu()
                 single_batch_tensors.append(control_tile)
             self.control_tensor_batch.append(single_batch_tensors)
+
+
+    def compute_x_tile(self, x_in, func):
+        N, C, H, W = x_in.shape
+        assert H == self.h and W == self.w
+        
