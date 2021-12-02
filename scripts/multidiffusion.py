@@ -262,3 +262,7 @@ class MultiDiffusionDelegate(object):
         N, C, H, W = x_in.shape
         assert H == self.h and W == self.w
         
+        # ControlNet support
+        self.prepare_control_tensors()
+
+        if self.x_buffer is None:
