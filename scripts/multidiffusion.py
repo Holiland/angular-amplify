@@ -266,3 +266,5 @@ class MultiDiffusionDelegate(object):
         self.prepare_control_tensors()
 
         if self.x_buffer is None:
+            self.x_buffer = torch.zeros_like(x_in, device=x_in.device)
+        else:
