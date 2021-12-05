@@ -271,3 +271,7 @@ class MultiDiffusionDelegate(object):
             self.x_buffer.zero_()
         if not self.is_kdiff:
             if self.x_buffer_pred is None:
+                self.x_buffer_pred = torch.zeros_like(x_in, device=x_in.device)
+            else:
+                self.x_buffer_pred.zero_()
+        if self.pbar is None:
