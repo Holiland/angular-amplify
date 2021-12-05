@@ -275,3 +275,6 @@ class MultiDiffusionDelegate(object):
             else:
                 self.x_buffer_pred.zero_()
         if self.pbar is None:
+            self.pbar = tqdm(total=self.num_batches * (state.job_count *
+                             state.sampling_steps), desc="MultiDiffusion Sampling: ")
+        for batch_id, bboxes in enumerate(self.batched_bboxes):
