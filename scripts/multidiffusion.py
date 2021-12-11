@@ -278,3 +278,7 @@ class MultiDiffusionDelegate(object):
             self.pbar = tqdm(total=self.num_batches * (state.job_count *
                              state.sampling_steps), desc="MultiDiffusion Sampling: ")
         for batch_id, bboxes in enumerate(self.batched_bboxes):
+            if state.interrupted:
+                return x_in
+            x_tile_list = []
+            for _, _, bbox in bboxes:
