@@ -282,3 +282,7 @@ class MultiDiffusionDelegate(object):
                 return x_in
             x_tile_list = []
             for _, _, bbox in bboxes:
+                x_tile_list.append(
+                    x_in[:, :, bbox[1]:bbox[3], bbox[0]:bbox[2]])
+            x_tile = torch.cat(x_tile_list, dim=0)
+            # controlnet tiling
