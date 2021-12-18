@@ -289,3 +289,7 @@ class MultiDiffusionDelegate(object):
             if self.control_tensor_batch is not None:
                 single_batch_tensors = self.control_tensor_batch[batch_id]
                 for i in range(len(single_batch_tensors)):
+                    self.control_params[i].hint_cond = single_batch_tensors[i].to(x_in.device)
+            # compute tiles
+            if self.is_kdiff:
+                x_tile_out = func(x_tile, bboxes)
