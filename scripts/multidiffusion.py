@@ -293,3 +293,5 @@ class MultiDiffusionDelegate(object):
             # compute tiles
             if self.is_kdiff:
                 x_tile_out = func(x_tile, bboxes)
+                for i, (_, _, bbox) in enumerate(bboxes):
+                    self.x_buffer[:, :, bbox[1]:bbox[3], bbox[0]:bbox[2]] += x_tile_out[i*N:(i+1)*N, :, :, :]
