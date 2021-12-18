@@ -286,3 +286,6 @@ class MultiDiffusionDelegate(object):
                     x_in[:, :, bbox[1]:bbox[3], bbox[0]:bbox[2]])
             x_tile = torch.cat(x_tile_list, dim=0)
             # controlnet tiling
+            if self.control_tensor_batch is not None:
+                single_batch_tensors = self.control_tensor_batch[batch_id]
+                for i in range(len(single_batch_tensors)):
