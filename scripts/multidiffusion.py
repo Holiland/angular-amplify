@@ -305,3 +305,6 @@ class MultiDiffusionDelegate(object):
                 self.pbar.close()
             else:
                 self.pbar.update()
+        x_out = torch.where(self.weights > 1, self.x_buffer / self.weights, self.x_buffer)
+        if not self.is_kdiff:
+            x_pred = torch.where(self.weights > 1, self.x_buffer_pred / self.weights, self.x_buffer_pred)
