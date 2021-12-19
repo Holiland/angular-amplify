@@ -303,3 +303,5 @@ class MultiDiffusionDelegate(object):
             # update progress bar
             if self.pbar.n >= self.pbar.total:
                 self.pbar.close()
+            else:
+                self.pbar.update()
