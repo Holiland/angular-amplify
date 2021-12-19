@@ -300,3 +300,6 @@ class MultiDiffusionDelegate(object):
                 for i, (_, _, bbox) in enumerate(bboxes):
                     self.x_buffer[:, :, bbox[1]:bbox[3], bbox[0]:bbox[2]] += x_tile_out[i*N:(i+1)*N, :, :, :]
                     self.x_buffer_pred[:, :, bbox[1]:bbox[3], bbox[0]:bbox[2]] += x_tile_pred[i*N:(i+1)*N, :, :, :]
+            # update progress bar
+            if self.pbar.n >= self.pbar.total:
+                self.pbar.close()
