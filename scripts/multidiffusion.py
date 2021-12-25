@@ -311,3 +311,7 @@ class MultiDiffusionDelegate(object):
             return x_out, x_pred
         return x_out
 
+
+class Script(scripts.Script):
+
+    def title(self):
