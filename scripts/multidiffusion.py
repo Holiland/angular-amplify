@@ -316,3 +316,6 @@ class Script(scripts.Script):
 
     def title(self):
         return "MultiDiffusion"
+
+    def show(self, is_img2img):
+        return scripts.AlwaysVisible
