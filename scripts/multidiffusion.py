@@ -315,3 +315,4 @@ class MultiDiffusionDelegate(object):
 class Script(scripts.Script):
 
     def title(self):
+        return "MultiDiffusion"
