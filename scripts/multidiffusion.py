@@ -337,3 +337,6 @@ class Script(scripts.Script):
                                              elem_id=self.elem_id("image_height"), visible=False)
                 with gr.Group():
                     with gr.Row():
+                        tile_width = gr.Slider(minimum=16, maximum=256, step=16, label='Latent tile width', value=64,
+                                               elem_id=self.elem_id("latent_tile_width"))
+                        tile_height = gr.Slider(minimum=16, maximum=256, step=16, label='Latent tile height', value=64,
