@@ -331,3 +331,9 @@ class Script(scripts.Script):
                     keep_input_size = gr.Checkbox(
                         label='Keep input image size', value=True, visible=(is_img2img))
                 with gr.Row():
+                    image_width = gr.Slider(minimum=256, maximum=16384, step=16, label='Image width', value=1024,
+                                            elem_id=self.elem_id("image_width"), visible=False)
+                    image_height = gr.Slider(minimum=256, maximum=16384, step=16, label='Image height', value=1024,
+                                             elem_id=self.elem_id("image_height"), visible=False)
+                with gr.Group():
+                    with gr.Row():
