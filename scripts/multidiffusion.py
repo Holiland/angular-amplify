@@ -343,3 +343,7 @@ class Script(scripts.Script):
                                                 elem_id=self.elem_id("latent_tile_height"))
 
                     with gr.Row():
+                        overlap = gr.Slider(minimum=0, maximum=256, step=4, label='Latent tile overlap', value=32,
+                                            elem_id=self.elem_id("latent_overlap"))
+                        batch_size = gr.Slider(
+                            minimum=1, maximum=8, step=1, label='Latent tile batch size', value=1)
