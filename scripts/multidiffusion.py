@@ -326,3 +326,8 @@ class Script(scripts.Script):
                 with gr.Row():
                     enabled = gr.Checkbox(
                         label='Enable MultiDiffusion', value=False)
+                    override_image_size = gr.Checkbox(
+                        label='Overwrite image size', value=False, visible=(not is_img2img))
+                    keep_input_size = gr.Checkbox(
+                        label='Keep input image size', value=True, visible=(is_img2img))
+                with gr.Row():
