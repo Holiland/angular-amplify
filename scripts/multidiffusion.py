@@ -347,3 +347,13 @@ class Script(scripts.Script):
                                             elem_id=self.elem_id("latent_overlap"))
                         batch_size = gr.Slider(
                             minimum=1, maximum=8, step=1, label='Latent tile batch size', value=1)
+                with gr.Group():
+                    with gr.Row():
+                        upscaler_index = gr.Dropdown(label='Upscaler', choices=[x.name for x in shared.sd_upscalers],
+                                                     value="None", elem_id=self.elem_id("upscaler_index"), visible=is_img2img)
+                        scale_factor = gr.Slider(minimum=1.0, maximum=8.0, step=0.05, label='Scale Factor', value=2.0,
+                                                 elem_id=self.elem_id("scale_factor"), visible=is_img2img)
+                control_tensor_cpu = gr.Checkbox(
+                    label='Move ControlNet images to CPU (if applicable)', value=False)
+
+        if not is_img2img:
