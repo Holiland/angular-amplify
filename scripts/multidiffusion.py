@@ -361,3 +361,4 @@ class Script(scripts.Script):
                 if value:
                     return gr.update(visible=True, interactive=True), gr.update(visible=True, interactive=True)
                 else:
+                    return gr.update(visible=False, interactive=False), gr.update(visible=False, interactive=False)
