@@ -362,3 +362,8 @@ class Script(scripts.Script):
                     return gr.update(visible=True, interactive=True), gr.update(visible=True, interactive=True)
                 else:
                     return gr.update(visible=False, interactive=False), gr.update(visible=False, interactive=False)
+
+            override_image_size.change(fn=on_override_image_size, inputs=[
+                                       override_image_size], outputs=[image_width, image_height])
+
+        return [enabled, override_image_size, image_width, image_height, keep_input_size, tile_width, tile_height, overlap, batch_size, upscaler_index, scale_factor, control_tensor_cpu]
