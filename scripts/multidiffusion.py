@@ -357,3 +357,7 @@ class Script(scripts.Script):
                     label='Move ControlNet images to CPU (if applicable)', value=False)
 
         if not is_img2img:
+            def on_override_image_size(value):
+                if value:
+                    return gr.update(visible=True, interactive=True), gr.update(visible=True, interactive=True)
+                else:
