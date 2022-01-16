@@ -367,3 +367,7 @@ class Script(scripts.Script):
                                        override_image_size], outputs=[image_width, image_height])
 
         return [enabled, override_image_size, image_width, image_height, keep_input_size, tile_width, tile_height, overlap, batch_size, upscaler_index, scale_factor, control_tensor_cpu]
+
+    def process(self, p, enabled, override_image_size, image_width, image_height, keep_input_size, tile_width, tile_height, overlap, tile_batch_size, upscaler_index, scale_factor, control_tensor_cpu):
+        if not enabled:
+            return p
