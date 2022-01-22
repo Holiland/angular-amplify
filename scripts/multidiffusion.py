@@ -371,3 +371,6 @@ class Script(scripts.Script):
     def process(self, p, enabled, override_image_size, image_width, image_height, keep_input_size, tile_width, tile_height, overlap, tile_batch_size, upscaler_index, scale_factor, control_tensor_cpu):
         if not enabled:
             return p
+        if isinstance(upscaler_index, str):
+            upscaler_index = [x.name.lower() for x in shared.sd_upscalers].index(
+                upscaler_index.lower())
