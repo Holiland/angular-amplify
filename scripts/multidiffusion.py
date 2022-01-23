@@ -378,3 +378,6 @@ class Script(scripts.Script):
             init_img = p.init_images[0]
             init_img = images.flatten(init_img, opts.img2img_background_color)
             upscaler = shared.sd_upscalers[upscaler_index]
+            if upscaler.name != "None":
+                print(f"Upscaling image with {upscaler.name}...")
+                image = upscaler.scaler.upscale(
