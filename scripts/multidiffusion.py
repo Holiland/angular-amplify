@@ -374,3 +374,7 @@ class Script(scripts.Script):
         if isinstance(upscaler_index, str):
             upscaler_index = [x.name.lower() for x in shared.sd_upscalers].index(
                 upscaler_index.lower())
+        if hasattr(p, "init_images") and len(p.init_images) > 0:
+            init_img = p.init_images[0]
+            init_img = images.flatten(init_img, opts.img2img_background_color)
+            upscaler = shared.sd_upscalers[upscaler_index]
