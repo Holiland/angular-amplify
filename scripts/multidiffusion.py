@@ -381,3 +381,7 @@ class Script(scripts.Script):
             if upscaler.name != "None":
                 print(f"Upscaling image with {upscaler.name}...")
                 image = upscaler.scaler.upscale(
+                    init_img, scale_factor, upscaler.data_path)
+                p.extra_generation_params["MultiDiffusion upscaler"] = upscaler.name
+                p.extra_generation_params["MultiDiffusion scale factor"] = scale_factor
+            else:
