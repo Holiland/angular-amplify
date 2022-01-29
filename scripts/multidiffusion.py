@@ -385,3 +385,8 @@ class Script(scripts.Script):
                 p.extra_generation_params["MultiDiffusion upscaler"] = upscaler.name
                 p.extra_generation_params["MultiDiffusion scale factor"] = scale_factor
             else:
+                image = init_img
+            p.init_images[0] = image
+            if keep_input_size:
+                p.width = image.width
+                p.height = image.height
