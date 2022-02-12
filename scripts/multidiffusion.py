@@ -399,3 +399,9 @@ class Script(scripts.Script):
         if not MultiDiffusionDelegate.splitable(p.width, p.height, tile_width, tile_height, overlap):
             print(
                 "MultiDiffusion is disabled because the image is too small or the tile size is too large.")
+            return p
+        p.extra_generation_params["MultiDiffusion tile width"] = tile_width
+        p.extra_generation_params["MultiDiffusion tile height"] = tile_height
+        p.extra_generation_params["MultiDiffusion overlap"] = overlap
+        # hack the create_sampler function to get the created sampler
+        old_create_sampler = sd_samplers.create_sampler
