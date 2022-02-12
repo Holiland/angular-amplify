@@ -396,3 +396,6 @@ class Script(scripts.Script):
         elif override_image_size:
             p.width = image_width
             p.height = image_height
+        if not MultiDiffusionDelegate.splitable(p.width, p.height, tile_width, tile_height, overlap):
+            print(
+                "MultiDiffusion is disabled because the image is too small or the tile size is too large.")
