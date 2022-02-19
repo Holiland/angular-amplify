@@ -405,3 +405,6 @@ class Script(scripts.Script):
         p.extra_generation_params["MultiDiffusion overlap"] = overlap
         # hack the create_sampler function to get the created sampler
         old_create_sampler = sd_samplers.create_sampler
+        controlnet_script = None
+        # try to hook into controlnet tensors
+        try:
