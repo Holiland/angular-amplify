@@ -416,3 +416,6 @@ class Script(scripts.Script):
                     hint = hint.unsqueeze(0)
                 _, _, h1, w1 = hint.shape
                 if h != h1 or w != w1:
+                    hint = torch.nn.functional.interpolate(
+                        hint, size=(h, w), mode="nearest")
+                return hint
