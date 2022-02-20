@@ -410,3 +410,9 @@ class Script(scripts.Script):
         try:
             from scripts.cldm import ControlNet
             # fix controlnet multi-batch issue
+
+            def align(self, hint, h, w):
+                if (len(hint.shape) == 3):
+                    hint = hint.unsqueeze(0)
+                _, _, h1, w1 = hint.shape
+                if h != h1 or w != w1:
