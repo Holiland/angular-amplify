@@ -408,3 +408,5 @@ class Script(scripts.Script):
         controlnet_script = None
         # try to hook into controlnet tensors
         try:
+            from scripts.cldm import ControlNet
+            # fix controlnet multi-batch issue
