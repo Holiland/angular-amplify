@@ -419,3 +419,6 @@ class Script(scripts.Script):
                     hint = torch.nn.functional.interpolate(
                         hint, size=(h, w), mode="nearest")
                 return hint
+            ControlNet.align = align
+            for script in p.scripts.scripts + p.scripts.alwayson_scripts:
+                if hasattr(script, "latest_network") and script.title().lower() == "controlnet":
