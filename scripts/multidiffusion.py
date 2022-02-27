@@ -432,3 +432,5 @@ class Script(scripts.Script):
         def create_sampler(name, model):
             # create the sampler with the original function
             sampler = old_create_sampler(name, model)
+            # unhook the create_sampler function
+            sd_samplers.create_sampler = old_create_sampler
