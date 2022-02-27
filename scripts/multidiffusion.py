@@ -422,3 +422,13 @@ class Script(scripts.Script):
             ControlNet.align = align
             for script in p.scripts.scripts + p.scripts.alwayson_scripts:
                 if hasattr(script, "latest_network") and script.title().lower() == "controlnet":
+                    controlnet_script = script
+                    print(
+                        "ControlNet found. MultiDiffusion ControlNet support is enabled.")
+                    break
+        except ImportError:
+            pass
+
+        def create_sampler(name, model):
+            # create the sampler with the original function
+            sampler = old_create_sampler(name, model)
