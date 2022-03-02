@@ -434,3 +434,4 @@ class Script(scripts.Script):
             sampler = old_create_sampler(name, model)
             # unhook the create_sampler function
             sd_samplers.create_sampler = old_create_sampler
+            delegate = MultiDiffusionDelegate(sampler, p.sampler_name, p.steps, p.width, p.height, tile_width, tile_height, overlap, tile_batch_size, False, controlnet_script=controlnet_script, control_tensor_cpu=control_tensor_cpu)
