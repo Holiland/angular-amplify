@@ -435,3 +435,5 @@ class Script(scripts.Script):
             # unhook the create_sampler function
             sd_samplers.create_sampler = old_create_sampler
             delegate = MultiDiffusionDelegate(sampler, p.sampler_name, p.steps, p.width, p.height, tile_width, tile_height, overlap, tile_batch_size, False, controlnet_script=controlnet_script, control_tensor_cpu=control_tensor_cpu)
+            print("MultiDiffusion hooked into", p.sampler_name, "sampler. Tile size:", tile_width, "x",
+                  tile_height, "Tile batches:", len(delegate.batched_bboxes), "Batch size:", tile_batch_size)
