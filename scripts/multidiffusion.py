@@ -438,3 +438,5 @@ class Script(scripts.Script):
             print("MultiDiffusion hooked into", p.sampler_name, "sampler. Tile size:", tile_width, "x",
                   tile_height, "Tile batches:", len(delegate.batched_bboxes), "Batch size:", tile_batch_size)
             return sampler
+        sd_samplers.create_sampler = create_sampler
+        return p
