@@ -17,3 +17,4 @@
 #       (~10 GB for 8K images!)
 #   - The merged output is completely seamless without any post-processing.
 #
+#   Drawbacks:
