@@ -11,3 +11,6 @@
 #
 #   This script is a wild hack that splits the image into tiles,
 #   encodes each tile separately, and merges the result back together.
+#
+#   Advantages:
+#   - The VAE can now work with giant images on limited VRAM
