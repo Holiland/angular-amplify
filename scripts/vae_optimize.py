@@ -14,3 +14,6 @@
 #
 #   Advantages:
 #   - The VAE can now work with giant images on limited VRAM
+#       (~10 GB for 8K images!)
+#   - The merged output is completely seamless without any post-processing.
+#
