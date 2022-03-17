@@ -18,3 +18,7 @@
 #   - The merged output is completely seamless without any post-processing.
 #
 #   Drawbacks:
+#   - Giant RAM needed. To store the intermediate results for a 4096x4096
+#       images, you need 32 GB RAM it consumes ~20GB); for 8192x8192
+#       you need 128 GB RAM machine (it consumes ~100 GB)
+#   - NaNs always appear in for 8k images when you use fp16 (half) VAE
