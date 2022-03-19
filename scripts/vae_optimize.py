@@ -25,3 +25,6 @@
 #       You must use --no-half-vae to disable half VAE for that giant image.
 #   - Slow speed. With default tile size, it takes around 50/200 seconds
 #       to encode/decode a 4096x4096 image; and 200/900 seconds to encode/decode
+#       a 8192x8192 image. (The speed is limited by both the GPU and the CPU.)
+#   - The gradient calculation is not compatible with this hack. It
+#       will break any backward() or torch.autograd.grad() that passes VAE.
