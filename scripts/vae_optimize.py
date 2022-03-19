@@ -22,3 +22,6 @@
 #       images, you need 32 GB RAM it consumes ~20GB); for 8192x8192
 #       you need 128 GB RAM machine (it consumes ~100 GB)
 #   - NaNs always appear in for 8k images when you use fp16 (half) VAE
+#       You must use --no-half-vae to disable half VAE for that giant image.
+#   - Slow speed. With default tile size, it takes around 50/200 seconds
+#       to encode/decode a 4096x4096 image; and 200/900 seconds to encode/decode
