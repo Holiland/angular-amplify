@@ -28,3 +28,9 @@
 #       a 8192x8192 image. (The speed is limited by both the GPU and the CPU.)
 #   - The gradient calculation is not compatible with this hack. It
 #       will break any backward() or torch.autograd.grad() that passes VAE.
+#       (But you can still use the VAE to generate training data.)
+#
+#   How it works:
+#   1) The image is split into tiles.
+#       - To ensure perfect results, each tile is padded with 32 pixels
+#           on each side.
