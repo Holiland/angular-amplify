@@ -38,3 +38,6 @@
 #           results to the original image without splitting.
 #   2) The original forward is decomposed into a task queue and a task worker.
 #       - The task queue is a list of functions that will be executed in order.
+#       - The task worker is a loop that executes the tasks in the queue.
+#   3) The task queue is executed for each tile.
+#       - Current tile is sent to GPU.
