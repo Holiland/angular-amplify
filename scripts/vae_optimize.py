@@ -41,3 +41,4 @@
 #       - The task worker is a loop that executes the tasks in the queue.
 #   3) The task queue is executed for each tile.
 #       - Current tile is sent to GPU.
+#       - local operations are directly executed.
