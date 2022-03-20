@@ -42,3 +42,6 @@
 #   3) The task queue is executed for each tile.
 #       - Current tile is sent to GPU.
 #       - local operations are directly executed.
+#       - Group norm calculation is temporarily suspended until the mean
+#           and var of all tiles are calculated.
+#       - The residual is pre-calculated and stored and addded back later.
