@@ -34,3 +34,7 @@
 #   1) The image is split into tiles.
 #       - To ensure perfect results, each tile is padded with 32 pixels
 #           on each side.
+#       - Then the conv2d/silu/upsample/downsample can produce identical
+#           results to the original image without splitting.
+#   2) The original forward is decomposed into a task queue and a task worker.
+#       - The task queue is a list of functions that will be executed in order.
