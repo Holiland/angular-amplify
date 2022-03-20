@@ -45,3 +45,8 @@
 #       - Group norm calculation is temporarily suspended until the mean
 #           and var of all tiles are calculated.
 #       - The residual is pre-calculated and stored and addded back later.
+#       - When need to go to the next tile, the current tile is send to cpu.
+#   4) After all tiles are processed, tiles are merged on cpu and return.
+#
+#   Enjoy!
+#
