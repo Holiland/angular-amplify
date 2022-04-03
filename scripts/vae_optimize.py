@@ -69,3 +69,6 @@ from einops import rearrange
 import gradio as gr
 
 import modules.scripts as scripts
+import modules.devices as devices
+from modules.shared import state
+from ldm.modules.diffusionmodules.model import AttnBlock, MemoryEfficientAttnBlock
