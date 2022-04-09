@@ -90,3 +90,7 @@ def get_recommend_encoder_tile_size():
             ENCODER_TILE_SIZE = 2048
         elif total_memory > 8*1000:
             ENCODER_TILE_SIZE = 1536
+        else:
+            ENCODER_TILE_SIZE = 960
+    else:
+        ENCODER_TILE_SIZE = 512
