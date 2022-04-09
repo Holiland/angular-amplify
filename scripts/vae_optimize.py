@@ -79,3 +79,8 @@ try:
 except ImportError:
     pass
 
+
+def get_recommend_encoder_tile_size():
+    if torch.cuda.is_available():
+        total_memory = torch.cuda.get_device_properties(
+            devices.device).total_memory // 2**20
