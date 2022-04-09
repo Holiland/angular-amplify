@@ -84,3 +84,7 @@ def get_recommend_encoder_tile_size():
     if torch.cuda.is_available():
         total_memory = torch.cuda.get_device_properties(
             devices.device).total_memory // 2**20
+        if total_memory > 16*1000:
+            ENCODER_TILE_SIZE = 3072
+        elif total_memory > 12*1000:
+            ENCODER_TILE_SIZE = 2048
