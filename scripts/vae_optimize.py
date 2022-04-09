@@ -94,3 +94,5 @@ def get_recommend_encoder_tile_size():
             ENCODER_TILE_SIZE = 960
     else:
         ENCODER_TILE_SIZE = 512
+    return ENCODER_TILE_SIZE
+
