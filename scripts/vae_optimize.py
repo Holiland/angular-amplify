@@ -100,3 +100,7 @@ def get_recommend_encoder_tile_size():
 def get_recommend_decoder_tile_size():
     if torch.cuda.is_available():
         total_memory = torch.cuda.get_device_properties(
+            devices.device).total_memory // 2**20
+        if total_memory > 30*1000:
+            DECODER_TILE_SIZE = 256
+        elif total_memory > 16*1000:
