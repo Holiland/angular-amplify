@@ -112,3 +112,6 @@ def get_recommend_decoder_tile_size():
         else:
             DECODER_TILE_SIZE = 64
     else:
+        DECODER_TILE_SIZE = 64
+    return DECODER_TILE_SIZE
+
