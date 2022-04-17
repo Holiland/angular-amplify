@@ -104,3 +104,8 @@ def get_recommend_decoder_tile_size():
         if total_memory > 30*1000:
             DECODER_TILE_SIZE = 256
         elif total_memory > 16*1000:
+            DECODER_TILE_SIZE = 192
+        elif total_memory > 12*1000:
+            DECODER_TILE_SIZE = 128
+        elif total_memory > 8*1000:
+            DECODER_TILE_SIZE = 96
