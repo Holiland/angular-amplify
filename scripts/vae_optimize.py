@@ -121,3 +121,9 @@ if 'global const':
     DEFAULT_MOVE_TO_GPU = False
     DEFAULT_FAST_ENCODER = True
     DEFAULT_FAST_DECODER = True
+    DEFAULT_COLOR_FIX = 0
+    DEFAULT_ENCODER_TILE_SIZE = get_recommend_encoder_tile_size()
+    DEFAULT_DECODER_TILE_SIZE = get_recommend_decoder_tile_size()
+
+
+# inplace version of silu
