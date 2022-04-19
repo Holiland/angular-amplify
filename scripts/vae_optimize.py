@@ -115,3 +115,9 @@ def get_recommend_decoder_tile_size():
         DECODER_TILE_SIZE = 64
     return DECODER_TILE_SIZE
 
+
+if 'global const':
+    DEFAULT_ENABLED = False
+    DEFAULT_MOVE_TO_GPU = False
+    DEFAULT_FAST_ENCODER = True
+    DEFAULT_FAST_DECODER = True
