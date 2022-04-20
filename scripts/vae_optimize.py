@@ -127,3 +127,5 @@ if 'global const':
 
 
 # inplace version of silu
+def inplace_nonlinearity(x):
+    # Test: fix for Nans
