@@ -133,3 +133,7 @@ def inplace_nonlinearity(x):
 
 # extracted from ldm.modules.diffusionmodules.model
 
+
+def attn_forward(self, h_):
+    q = self.q(h_)
+    k = self.k(h_)
