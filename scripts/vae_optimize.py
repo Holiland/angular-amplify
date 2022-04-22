@@ -137,3 +137,7 @@ def inplace_nonlinearity(x):
 def attn_forward(self, h_):
     q = self.q(h_)
     k = self.k(h_)
+    v = self.v(h_)
+
+    # compute attention
+    b, c, h, w = q.shape
