@@ -141,3 +141,6 @@ def attn_forward(self, h_):
 
     # compute attention
     b, c, h, w = q.shape
+    q = q.reshape(b, c, h*w)
+    q = q.permute(0, 2, 1)   # b,hw,c
+    k = k.reshape(b, c, h*w)  # b,c,hw
