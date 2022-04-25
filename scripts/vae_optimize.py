@@ -151,3 +151,8 @@ def attn_forward(self, h_):
     # attend to values
     v = v.reshape(b, c, h*w)
     w_ = w_.permute(0, 2, 1)   # b,hw,hw (first hw of k, second of q)
+    # b, c,hw (hw of q) h_[b,c,j] = sum_i v[b,c,i] w_[b,i,j]
+    h_ = torch.bmm(v, w_)
+    h_ = h_.reshape(b, c, h, w)
+
+    h_ = self.proj_out(h_)
