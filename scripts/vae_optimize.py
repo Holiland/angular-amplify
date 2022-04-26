@@ -156,3 +156,8 @@ def attn_forward(self, h_):
     h_ = h_.reshape(b, c, h, w)
 
     h_ = self.proj_out(h_)
+
+    return h_
+
+
+def xformer_attn_forward(self, h_):
