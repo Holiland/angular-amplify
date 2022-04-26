@@ -161,3 +161,6 @@ def attn_forward(self, h_):
 
 
 def xformer_attn_forward(self, h_):
+    q = self.q(h_)
+    k = self.k(h_)
+    v = self.v(h_)
