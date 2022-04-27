@@ -168,3 +168,6 @@ def xformer_attn_forward(self, h_):
     # compute attention
     B, C, H, W = q.shape
     q, k, v = map(lambda x: rearrange(x, 'b c h w -> b (h w) c'), (q, k, v))
+
+    q, k, v = map(
+        lambda t: t.unsqueeze(3)
