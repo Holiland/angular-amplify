@@ -171,3 +171,7 @@ def xformer_attn_forward(self, h_):
 
     q, k, v = map(
         lambda t: t.unsqueeze(3)
+        .reshape(B, t.shape[1], 1, C)
+        .permute(0, 2, 1, 3)
+        .reshape(B * 1, t.shape[1], C)
+        .contiguous(),
