@@ -175,3 +175,4 @@ def xformer_attn_forward(self, h_):
         .permute(0, 2, 1, 3)
         .reshape(B * 1, t.shape[1], C)
         .contiguous(),
+        (q, k, v),
