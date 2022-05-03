@@ -176,3 +176,6 @@ def xformer_attn_forward(self, h_):
         .reshape(B * 1, t.shape[1], C)
         .contiguous(),
         (q, k, v),
+    )
+    out = xformers.ops.memory_efficient_attention(
+        q, k, v, attn_bias=None, op=self.attention_op)
