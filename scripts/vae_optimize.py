@@ -179,3 +179,6 @@ def xformer_attn_forward(self, h_):
     )
     out = xformers.ops.memory_efficient_attention(
         q, k, v, attn_bias=None, op=self.attention_op)
+
+    out = (
+        out.unsqueeze(0)
