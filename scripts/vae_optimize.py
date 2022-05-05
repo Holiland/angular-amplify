@@ -186,3 +186,7 @@ def xformer_attn_forward(self, h_):
         .permute(0, 2, 1, 3)
         .reshape(B, out.shape[1], C)
     )
+    out = rearrange(out, 'b (h w) c -> b c h w', b=B, h=H, w=W, c=C)
+    out = self.proj_out(out)
+    return out
+
