@@ -182,3 +182,7 @@ def xformer_attn_forward(self, h_):
 
     out = (
         out.unsqueeze(0)
+        .reshape(B, 1, out.shape[1], C)
+        .permute(0, 2, 1, 3)
+        .reshape(B, out.shape[1], C)
+    )
