@@ -194,3 +194,9 @@ def xformer_attn_forward(self, h_):
 def attn2task(task_queue, net):
     if isinstance(net, AttnBlock):
         task_queue.append(('store_res', lambda x: x))
+        task_queue.append(('pre_norm', net.norm))
+        task_queue.append(('attn', lambda x, net=net: attn_forward(net, x)))
+        task_queue.append(['add_res', None])
+    elif isinstance(net, MemoryEfficientAttnBlock):
+        task_queue.append(('store_res', lambda x: x))
+        task_queue.append(('pre_norm', net.norm))
