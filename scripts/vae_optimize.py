@@ -190,3 +190,7 @@ def xformer_attn_forward(self, h_):
     out = self.proj_out(out)
     return out
 
+
+def attn2task(task_queue, net):
+    if isinstance(net, AttnBlock):
+        task_queue.append(('store_res', lambda x: x))
