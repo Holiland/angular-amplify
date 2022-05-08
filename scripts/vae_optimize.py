@@ -200,3 +200,6 @@ def attn2task(task_queue, net):
     elif isinstance(net, MemoryEfficientAttnBlock):
         task_queue.append(('store_res', lambda x: x))
         task_queue.append(('pre_norm', net.norm))
+        task_queue.append(
+            ('attn', lambda x, net=net: xformer_attn_forward(net, x)))
+        task_queue.append(['add_res', None])
