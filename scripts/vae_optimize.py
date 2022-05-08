@@ -203,3 +203,10 @@ def attn2task(task_queue, net):
         task_queue.append(
             ('attn', lambda x, net=net: xformer_attn_forward(net, x)))
         task_queue.append(['add_res', None])
+
+
+def resblock2task(queue, block):
+    """
+    Turn a ResNetBlock into a sequence of tasks and append to the task queue
+
+    @param queue: the target task queue
