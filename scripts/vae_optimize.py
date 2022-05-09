@@ -210,3 +210,8 @@ def resblock2task(queue, block):
     Turn a ResNetBlock into a sequence of tasks and append to the task queue
 
     @param queue: the target task queue
+    @param block: ResNetBlock
+
+    """
+    if block.in_channels != block.out_channels:
+        if block.use_conv_shortcut:
