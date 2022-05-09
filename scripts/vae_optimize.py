@@ -215,3 +215,7 @@ def resblock2task(queue, block):
     """
     if block.in_channels != block.out_channels:
         if block.use_conv_shortcut:
+            queue.append(('store_res', block.conv_shortcut))
+        else:
+            queue.append(('store_res', block.nin_shortcut))
+    else:
