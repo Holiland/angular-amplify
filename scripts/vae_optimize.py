@@ -219,3 +219,7 @@ def resblock2task(queue, block):
         else:
             queue.append(('store_res', block.nin_shortcut))
     else:
+        queue.append(('store_res', lambda x: x))
+    queue.append(('pre_norm', block.norm1))
+    queue.append(('silu', inplace_nonlinearity))
+    queue.append(('conv1', block.conv1))
