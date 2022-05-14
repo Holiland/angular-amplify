@@ -223,3 +223,7 @@ def resblock2task(queue, block):
     queue.append(('pre_norm', block.norm1))
     queue.append(('silu', inplace_nonlinearity))
     queue.append(('conv1', block.conv1))
+    queue.append(('pre_norm', block.norm2))
+    queue.append(('silu', inplace_nonlinearity))
+    queue.append(('conv2', block.conv2))
+    queue.append(['add_res', None])
