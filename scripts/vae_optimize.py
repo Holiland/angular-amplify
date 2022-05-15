@@ -227,3 +227,10 @@ def resblock2task(queue, block):
     queue.append(('silu', inplace_nonlinearity))
     queue.append(('conv2', block.conv2))
     queue.append(['add_res', None])
+
+
+def build_sampling(task_queue, net, is_decoder):
+    """
+    Build the sampling part of a task queue
+    @param task_queue: the target task queue
+    @param net: the network
