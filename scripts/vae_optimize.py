@@ -236,3 +236,4 @@ def build_sampling(task_queue, net, is_decoder):
     @param net: the network
     @param is_decoder: currently building decoder or encoder
     """
+    if is_decoder:
