@@ -237,3 +237,7 @@ def build_sampling(task_queue, net, is_decoder):
     @param is_decoder: currently building decoder or encoder
     """
     if is_decoder:
+        resblock2task(task_queue, net.mid.block_1)
+        attn2task(task_queue, net.mid.attn_1)
+        resblock2task(task_queue, net.mid.block_2)
+        resolution_iter = reversed(range(net.num_resolutions))
