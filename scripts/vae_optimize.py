@@ -241,3 +241,5 @@ def build_sampling(task_queue, net, is_decoder):
         attn2task(task_queue, net.mid.attn_1)
         resblock2task(task_queue, net.mid.block_2)
         resolution_iter = reversed(range(net.num_resolutions))
+        block_ids = net.num_res_blocks + 1
+        condition = 0
