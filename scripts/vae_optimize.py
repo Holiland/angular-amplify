@@ -243,3 +243,5 @@ def build_sampling(task_queue, net, is_decoder):
         resolution_iter = reversed(range(net.num_resolutions))
         block_ids = net.num_res_blocks + 1
         condition = 0
+        module = net.up
+        func_name = 'upsample'
