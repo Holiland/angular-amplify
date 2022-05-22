@@ -248,3 +248,6 @@ def build_sampling(task_queue, net, is_decoder):
     else:
         resolution_iter = range(net.num_resolutions)
         block_ids = net.num_res_blocks
+        condition = net.num_resolutions - 1
+        module = net.down
+        func_name = 'downsample'
