@@ -255,3 +255,5 @@ def build_sampling(task_queue, net, is_decoder):
     for i_level in resolution_iter:
         for i_block in range(block_ids):
             resblock2task(task_queue, module[i_level].block[i_block])
+        if i_level != condition:
+            task_queue.append((func_name, getattr(module[i_level], func_name)))
