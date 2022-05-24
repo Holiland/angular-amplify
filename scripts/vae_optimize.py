@@ -257,3 +257,6 @@ def build_sampling(task_queue, net, is_decoder):
             resblock2task(task_queue, module[i_level].block[i_block])
         if i_level != condition:
             task_queue.append((func_name, getattr(module[i_level], func_name)))
+
+    if not is_decoder:
+        resblock2task(task_queue, net.mid.block_1)
