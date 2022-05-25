@@ -262,3 +262,7 @@ def build_sampling(task_queue, net, is_decoder):
         resblock2task(task_queue, net.mid.block_1)
         attn2task(task_queue, net.mid.attn_1)
         resblock2task(task_queue, net.mid.block_2)
+
+
+def build_task_queue(net, is_decoder):
+    """
