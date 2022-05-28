@@ -266,3 +266,8 @@ def build_sampling(task_queue, net, is_decoder):
 
 def build_task_queue(net, is_decoder):
     """
+    Build a single task queue for the encoder or decoder
+    @param net: the VAE decoder or encoder network
+    @param is_decoder: currently building decoder or encoder
+    @return: the task queue
+    """
