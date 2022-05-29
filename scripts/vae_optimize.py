@@ -271,3 +271,5 @@ def build_task_queue(net, is_decoder):
     @param is_decoder: currently building decoder or encoder
     @return: the task queue
     """
+    task_queue = []
+    task_queue.append(('conv_in', net.conv_in))
