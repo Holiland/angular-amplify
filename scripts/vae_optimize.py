@@ -281,3 +281,6 @@ def build_task_queue(net, is_decoder):
     if not is_decoder or not net.give_pre_end:
         task_queue.append(('pre_norm', net.norm_out))
         task_queue.append(('silu', inplace_nonlinearity))
+        task_queue.append(('conv_out', net.conv_out))
+        if is_decoder and net.tanh_out:
+            task_queue.append(('tanh', torch.tanh))
