@@ -273,3 +273,11 @@ def build_task_queue(net, is_decoder):
     """
     task_queue = []
     task_queue.append(('conv_in', net.conv_in))
+
+    # construct the sampling part of the task queue
+    # because encoder and decoder share the same architecture, we extract the sampling part
+    build_sampling(task_queue, net, is_decoder)
+
+    if not is_decoder or not net.give_pre_end:
+        task_queue.append(('pre_norm', net.norm_out))
+        task_queue.append(('silu', inplace_nonlinearity))
