@@ -284,3 +284,8 @@ def build_task_queue(net, is_decoder):
         task_queue.append(('conv_out', net.conv_out))
         if is_decoder and net.tanh_out:
             task_queue.append(('tanh', torch.tanh))
+
+    return task_queue
+
+
+def clone_task_queue(task_queue):
