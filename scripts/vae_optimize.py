@@ -289,3 +289,5 @@ def build_task_queue(net, is_decoder):
 
 
 def clone_task_queue(task_queue):
+    """
+    Clone a task queue
