@@ -291,3 +291,7 @@ def build_task_queue(net, is_decoder):
 def clone_task_queue(task_queue):
     """
     Clone a task queue
+    @param task_queue: the task queue to be cloned
+    @return: the cloned task queue
+    """
+    return [[item for item in task] for task in task_queue]
