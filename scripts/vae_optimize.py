@@ -296,3 +296,11 @@ def clone_task_queue(task_queue):
     """
     return [[item for item in task] for task in task_queue]
 
+
+def get_var_mean(input, num_groups, eps=1e-6):
+    """
+    Get mean and var for group norm
+    """
+    b, c = input.size(0), input.size(1)
+    channel_in_group = int(c/num_groups)
+    input_reshaped = input.contiguous().view(
