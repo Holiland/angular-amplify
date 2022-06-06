@@ -304,3 +304,4 @@ def get_var_mean(input, num_groups, eps=1e-6):
     b, c = input.size(0), input.size(1)
     channel_in_group = int(c/num_groups)
     input_reshaped = input.contiguous().view(
+        1, int(b * num_groups), channel_in_group, *input.size()[2:])
