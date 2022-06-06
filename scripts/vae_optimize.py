@@ -305,3 +305,7 @@ def get_var_mean(input, num_groups, eps=1e-6):
     channel_in_group = int(c/num_groups)
     input_reshaped = input.contiguous().view(
         1, int(b * num_groups), channel_in_group, *input.size()[2:])
+    var, mean = torch.var_mean(
+        input_reshaped, dim=[0, 2, 3, 4], unbiased=False)
+    return var, mean
+
