@@ -309,3 +309,7 @@ def get_var_mean(input, num_groups, eps=1e-6):
         input_reshaped, dim=[0, 2, 3, 4], unbiased=False)
     return var, mean
 
+
+def custom_group_norm(input, num_groups, mean, var, weight=None, bias=None, eps=1e-6):
+    """
+    Custom group norm with fixed mean and var
