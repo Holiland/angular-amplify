@@ -317,3 +317,5 @@ def custom_group_norm(input, num_groups, mean, var, weight=None, bias=None, eps=
     @param input: input tensor
     @param num_groups: number of groups. by default, num_groups = 32
     @param mean: mean, must be pre-calculated by get_var_mean
+    @param var: var, must be pre-calculated by get_var_mean
+    @param weight: weight, should be fetched from the original group norm
