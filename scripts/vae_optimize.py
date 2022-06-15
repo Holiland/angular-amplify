@@ -321,3 +321,5 @@ def custom_group_norm(input, num_groups, mean, var, weight=None, bias=None, eps=
     @param weight: weight, should be fetched from the original group norm
     @param bias: bias, should be fetched from the original group norm
     @param eps: epsilon, by default, eps = 1e-6 to match the original group norm
+
+    @return: normalized tensor
