@@ -325,3 +325,5 @@ def custom_group_norm(input, num_groups, mean, var, weight=None, bias=None, eps=
     @return: normalized tensor
     """
     b, c = input.size(0), input.size(1)
+    channel_in_group = int(c/num_groups)
+    input_reshaped = input.contiguous().view(
