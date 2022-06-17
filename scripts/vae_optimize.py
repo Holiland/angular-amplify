@@ -328,3 +328,8 @@ def custom_group_norm(input, num_groups, mean, var, weight=None, bias=None, eps=
     channel_in_group = int(c/num_groups)
     input_reshaped = input.contiguous().view(
         1, int(b * num_groups), channel_in_group, *input.size()[2:])
+
+    out = F.batch_norm(input_reshaped, mean, var, weight=None, bias=None,
+                       training=False, momentum=0, eps=eps)
+
+    out = out.view(b, c, *input.size()[2:])
