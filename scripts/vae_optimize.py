@@ -333,3 +333,10 @@ def custom_group_norm(input, num_groups, mean, var, weight=None, bias=None, eps=
                        training=False, momentum=0, eps=eps)
 
     out = out.view(b, c, *input.size()[2:])
+
+    # post affine transform
+    if weight is not None:
+        out *= weight.view(1, -1, 1, 1)
+    if bias is not None:
+        out += bias.view(1, -1, 1, 1)
+    return out
