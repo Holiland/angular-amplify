@@ -340,3 +340,6 @@ def custom_group_norm(input, num_groups, mean, var, weight=None, bias=None, eps=
     if bias is not None:
         out += bias.view(1, -1, 1, 1)
     return out
+
+
+def crop_valid_region(x, input_bbox, target_bbox, is_decoder):
