@@ -343,3 +343,7 @@ def custom_group_norm(input, num_groups, mean, var, weight=None, bias=None, eps=
 
 
 def crop_valid_region(x, input_bbox, target_bbox, is_decoder):
+    """
+    Crop the valid region from the tile
+    @param x: input tile
+    @param input_bbox: original input bounding box
