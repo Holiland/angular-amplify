@@ -347,3 +347,5 @@ def crop_valid_region(x, input_bbox, target_bbox, is_decoder):
     Crop the valid region from the tile
     @param x: input tile
     @param input_bbox: original input bounding box
+    @param target_bbox: output bounding box
+    @param scale: scale factor
