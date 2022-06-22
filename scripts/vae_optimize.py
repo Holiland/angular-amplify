@@ -349,3 +349,7 @@ def crop_valid_region(x, input_bbox, target_bbox, is_decoder):
     @param input_bbox: original input bounding box
     @param target_bbox: output bounding box
     @param scale: scale factor
+    @return: cropped tile
+    """
+    padded_bbox = [i * 8 if is_decoder else i//8 for i in input_bbox]
+    margin = [target_bbox[i] - padded_bbox[i] for i in range(4)]
