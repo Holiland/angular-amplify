@@ -356,3 +356,8 @@ def crop_valid_region(x, input_bbox, target_bbox, is_decoder):
     return x[:, :, margin[2]:x.size(2)+margin[3], margin[0]:x.size(3)+margin[1]]
 
 # ↓↓↓ https://github.com/Kahsolt/stable-diffusion-webui-vae-tile-infer ↓↓↓
+
+
+def perfcount(fn):
+    def wrapper(*args, **kwargs):
+        ts = time()
