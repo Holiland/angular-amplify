@@ -361,3 +361,6 @@ def crop_valid_region(x, input_bbox, target_bbox, is_decoder):
 def perfcount(fn):
     def wrapper(*args, **kwargs):
         ts = time()
+
+        if torch.cuda.is_available():
+            torch.cuda.reset_peak_memory_stats(devices.device)
