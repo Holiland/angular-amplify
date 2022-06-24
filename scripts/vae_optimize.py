@@ -364,3 +364,7 @@ def perfcount(fn):
 
         if torch.cuda.is_available():
             torch.cuda.reset_peak_memory_stats(devices.device)
+        devices.torch_gc()
+        gc.collect()
+
+        ret = fn(*args, **kwargs)
