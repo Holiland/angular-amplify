@@ -368,3 +368,8 @@ def perfcount(fn):
         gc.collect()
 
         ret = fn(*args, **kwargs)
+
+        devices.torch_gc()
+        gc.collect()
+        if torch.cuda.is_available():
+            vram = torch.cuda.max_memory_allocated(devices.device) / 2**20
