@@ -375,3 +375,8 @@ def perfcount(fn):
             vram = torch.cuda.max_memory_allocated(devices.device) / 2**20
             torch.cuda.reset_peak_memory_stats(devices.device)
             print(
+                f'[Tiled VAE]: Done in {time() - ts:.3f}s, max VRAM alloc {vram:.3f} MB')
+        else:
+            print(f'[Tiled VAE]: Done in {time() - ts:.3f}s')
+
+        return ret
