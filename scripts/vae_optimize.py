@@ -380,3 +380,6 @@ def perfcount(fn):
             print(f'[Tiled VAE]: Done in {time() - ts:.3f}s')
 
         return ret
+    return wrapper
+
+# copy end :)
