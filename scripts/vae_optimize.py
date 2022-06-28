@@ -383,3 +383,7 @@ def perfcount(fn):
     return wrapper
 
 # copy end :)
+
+
+class GroupNormParam:
+    def __init__(self):
