@@ -387,3 +387,7 @@ def perfcount(fn):
 
 class GroupNormParam:
     def __init__(self):
+        self.var_list = []
+        self.mean_list = []
+        self.pixel_list = []
+        self.weight = None
