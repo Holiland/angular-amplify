@@ -391,3 +391,6 @@ class GroupNormParam:
         self.mean_list = []
         self.pixel_list = []
         self.weight = None
+        self.bias = None
+
+    def add_tile(self, tile, layer):
