@@ -398,3 +398,4 @@ class GroupNormParam:
         # For giant images, the variance can be larger than max float16
         # In this case we create a copy to float32
         if var.dtype == torch.float16 and var.isinf().any():
+            fp32_tile = tile.float()
