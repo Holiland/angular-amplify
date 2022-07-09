@@ -399,3 +399,9 @@ class GroupNormParam:
         # In this case we create a copy to float32
         if var.dtype == torch.float16 and var.isinf().any():
             fp32_tile = tile.float()
+            var, mean = get_var_mean(fp32_tile, 32)
+        # ============= DEBUG: test for infinite =============
+        # if torch.isinf(var).any():
+        #    print('var: ', var)
+        # ====================================================
+        self.var_list.append(var)
