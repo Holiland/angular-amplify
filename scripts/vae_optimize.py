@@ -405,3 +405,5 @@ class GroupNormParam:
         #    print('var: ', var)
         # ====================================================
         self.var_list.append(var)
+        self.mean_list.append(mean)
+        self.pixel_list.append(
