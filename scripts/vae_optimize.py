@@ -407,3 +407,5 @@ class GroupNormParam:
         self.var_list.append(var)
         self.mean_list.append(mean)
         self.pixel_list.append(
+            tile.shape[2]*tile.shape[3])
+        if hasattr(layer, 'weight'):
