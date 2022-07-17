@@ -409,3 +409,5 @@ class GroupNormParam:
         self.pixel_list.append(
             tile.shape[2]*tile.shape[3])
         if hasattr(layer, 'weight'):
+            self.weight = layer.weight
+            self.bias = layer.bias
