@@ -411,3 +411,8 @@ class GroupNormParam:
         if hasattr(layer, 'weight'):
             self.weight = layer.weight
             self.bias = layer.bias
+        else:
+            self.weight = None
+            self.bias = None
+
+    def summary(self):
