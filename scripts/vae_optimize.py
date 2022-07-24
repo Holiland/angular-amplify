@@ -419,3 +419,9 @@ class GroupNormParam:
         """
         summarize the mean and var and return a function
         that apply group norm on each tile
+        """
+        if len(self.var_list) == 0:
+            return None
+        var = torch.vstack(self.var_list)
+        mean = torch.vstack(self.mean_list)
+        max_value = max(self.pixel_list)
