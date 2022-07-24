@@ -416,3 +416,6 @@ class GroupNormParam:
             self.bias = None
 
     def summary(self):
+        """
+        summarize the mean and var and return a function
+        that apply group norm on each tile
