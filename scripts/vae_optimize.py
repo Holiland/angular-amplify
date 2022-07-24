@@ -425,3 +425,7 @@ class GroupNormParam:
         var = torch.vstack(self.var_list)
         mean = torch.vstack(self.mean_list)
         max_value = max(self.pixel_list)
+        pixels = torch.tensor(
+            self.pixel_list, dtype=torch.float32, device=devices.device) / max_value
+        sum_pixels = torch.sum(pixels)
+        pixels = pixels.unsqueeze(
