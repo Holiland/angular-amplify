@@ -429,3 +429,5 @@ class GroupNormParam:
             self.pixel_list, dtype=torch.float32, device=devices.device) / max_value
         sum_pixels = torch.sum(pixels)
         pixels = pixels.unsqueeze(
+            1) / sum_pixels
+        var = torch.sum(
