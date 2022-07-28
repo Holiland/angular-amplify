@@ -431,3 +431,6 @@ class GroupNormParam:
         pixels = pixels.unsqueeze(
             1) / sum_pixels
         var = torch.sum(
+            var * pixels, dim=0)
+        mean = torch.sum(
+            mean * pixels, dim=0)
