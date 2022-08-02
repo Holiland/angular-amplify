@@ -437,3 +437,6 @@ class GroupNormParam:
         return lambda x:  custom_group_norm(x, 32, mean, var, self.weight, self.bias)
 
     @staticmethod
+    def from_tile(tile, norm):
+        """
+        create a function from a single tile without summary
