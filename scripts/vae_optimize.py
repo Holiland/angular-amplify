@@ -434,3 +434,6 @@ class GroupNormParam:
             var * pixels, dim=0)
         mean = torch.sum(
             mean * pixels, dim=0)
+        return lambda x:  custom_group_norm(x, 32, mean, var, self.weight, self.bias)
+
+    @staticmethod
