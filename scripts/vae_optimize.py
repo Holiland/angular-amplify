@@ -454,3 +454,8 @@ class GroupNormParam:
         if hasattr(norm, 'weight'):
             weight = norm.weight
             bias = norm.bias
+        else:
+            weight = None
+            bias = None
+
+        def group_norm_func(x, mean=mean, var=var, weight=weight, bias=bias):
