@@ -440,3 +440,7 @@ class GroupNormParam:
     def from_tile(tile, norm):
         """
         create a function from a single tile without summary
+        """
+        var, mean = get_var_mean(tile, 32)
+        if var.dtype == torch.float16 and var.isinf().any():
+            fp32_tile = tile.float()
