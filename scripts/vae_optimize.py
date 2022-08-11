@@ -462,3 +462,9 @@ class GroupNormParam:
             return custom_group_norm(x, 32, mean, var, weight, bias, 1e-6)
         return group_norm_func
 
+
+class VAEHook:
+
+    def __init__(self, net, tile_size, is_decoder, fast_decoder, fast_encoder, color_fix, to_gpu=False):
+        self.net = net                  # encoder | decoder
+        self.tile_size = tile_size
