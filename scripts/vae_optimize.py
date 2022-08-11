@@ -459,3 +459,6 @@ class GroupNormParam:
             bias = None
 
         def group_norm_func(x, mean=mean, var=var, weight=weight, bias=bias):
+            return custom_group_norm(x, 32, mean, var, weight, bias, 1e-6)
+        return group_norm_func
+
