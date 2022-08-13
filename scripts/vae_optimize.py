@@ -468,3 +468,7 @@ class VAEHook:
     def __init__(self, net, tile_size, is_decoder, fast_decoder, fast_encoder, color_fix, to_gpu=False):
         self.net = net                  # encoder | decoder
         self.tile_size = tile_size
+        self.is_decoder = is_decoder
+        self.fast_mode = (fast_encoder and not is_decoder) or (
+            fast_decoder and is_decoder)
+        self.color_fix = color_fix and not is_decoder
