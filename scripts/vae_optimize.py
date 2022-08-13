@@ -472,3 +472,5 @@ class VAEHook:
         self.fast_mode = (fast_encoder and not is_decoder) or (
             fast_decoder and is_decoder)
         self.color_fix = color_fix and not is_decoder
+        self.to_gpu = to_gpu
+        self.pad = 11 if is_decoder else 32
