@@ -474,3 +474,7 @@ class VAEHook:
         self.color_fix = color_fix and not is_decoder
         self.to_gpu = to_gpu
         self.pad = 11 if is_decoder else 32
+
+    def __call__(self, x):
+        B, C, H, W = x.shape
+        original_device = next(self.net.parameters()).device
