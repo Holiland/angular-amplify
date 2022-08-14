@@ -479,3 +479,5 @@ class VAEHook:
         B, C, H, W = x.shape
         original_device = next(self.net.parameters()).device
         try:
+            if self.to_gpu:
+                self.net.to(devices.get_optimal_device())
