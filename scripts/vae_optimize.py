@@ -478,3 +478,4 @@ class VAEHook:
     def __call__(self, x):
         B, C, H, W = x.shape
         original_device = next(self.net.parameters()).device
+        try:
