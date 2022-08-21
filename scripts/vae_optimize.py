@@ -481,3 +481,6 @@ class VAEHook:
         try:
             if self.to_gpu:
                 self.net.to(devices.get_optimal_device())
+            if max(H, W) <= self.pad * 2 + self.tile_size:
+                print("[Tiled VAE]: the input size is tiny and unnecessary to tile.")
+                return self.net.original_forward(x)
