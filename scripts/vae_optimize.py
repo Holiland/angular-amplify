@@ -487,3 +487,6 @@ class VAEHook:
             else:
                 return self.vae_tile_forward(x)
         finally:
+            self.net.to(original_device)
+
+    def get_best_tile_size(self, lowerbound, upperbound):
