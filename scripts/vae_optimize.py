@@ -495,3 +495,9 @@ class VAEHook:
         """
         divider = 32
         while divider >= 2:
+            remainer = lowerbound % divider
+            if remainer == 0:
+                return lowerbound
+            candidate = lowerbound - remainer + divider
+            if candidate <= upperbound:
+                return candidate
