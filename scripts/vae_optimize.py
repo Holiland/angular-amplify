@@ -490,3 +490,8 @@ class VAEHook:
             self.net.to(original_device)
 
     def get_best_tile_size(self, lowerbound, upperbound):
+        """
+        Get the best tile size for GPU memory
+        """
+        divider = 32
+        while divider >= 2:
