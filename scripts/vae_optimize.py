@@ -501,3 +501,7 @@ class VAEHook:
             candidate = lowerbound - remainer + divider
             if candidate <= upperbound:
                 return candidate
+            divider //= 2
+        return lowerbound
+
+    def split_tiles(self, h, w):
