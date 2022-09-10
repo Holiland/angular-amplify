@@ -510,3 +510,7 @@ class VAEHook:
         @param h: height of the image
         @param w: width of the image
         @return: tile_input_bboxes, tile_output_bboxes
+        """
+        tile_input_bboxes, tile_output_bboxes = [], []
+        tile_size = self.tile_size
+        pad = self.pad
