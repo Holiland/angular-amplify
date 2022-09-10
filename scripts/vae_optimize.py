@@ -505,3 +505,8 @@ class VAEHook:
         return lowerbound
 
     def split_tiles(self, h, w):
+        """
+        Tool function to split the image into tiles
+        @param h: height of the image
+        @param w: width of the image
+        @return: tile_input_bboxes, tile_output_bboxes
