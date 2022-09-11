@@ -514,3 +514,8 @@ class VAEHook:
         tile_input_bboxes, tile_output_bboxes = [], []
         tile_size = self.tile_size
         pad = self.pad
+        num_height_tiles = math.ceil((h - 2 * pad) / tile_size)
+        num_width_tiles = math.ceil((w - 2 * pad) / tile_size)
+        # If any of the numbers are 0, we let it be 1
+        # This is to deal with long and thin images
+        num_height_tiles = max(num_height_tiles, 1)
