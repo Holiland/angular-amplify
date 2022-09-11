@@ -519,3 +519,6 @@ class VAEHook:
         # If any of the numbers are 0, we let it be 1
         # This is to deal with long and thin images
         num_height_tiles = max(num_height_tiles, 1)
+        num_width_tiles = max(num_width_tiles, 1)
+
+        # Suggestions from https://github.com/Kahsolt: auto shrink the tile size
