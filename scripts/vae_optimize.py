@@ -529,3 +529,8 @@ class VAEHook:
 
         print(f'[Tiled VAE]: split to {num_height_tiles}x{num_width_tiles} = {num_height_tiles*num_width_tiles} tiles. ' +
               f'Optimal tile size {real_tile_width}x{real_tile_height}, original tile size {tile_size}x{tile_size}')
+
+        for i in range(num_height_tiles):
+            for j in range(num_width_tiles):
+                # bbox: [x1, x2, y1, y2]
+                # the padding is is unnessary for image borders. So we directly start from (32, 32)
