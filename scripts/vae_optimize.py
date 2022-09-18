@@ -524,3 +524,5 @@ class VAEHook:
         # Suggestions from https://github.com/Kahsolt: auto shrink the tile size
         real_tile_height = math.ceil((h - 2 * pad) / num_height_tiles)
         real_tile_width = math.ceil((w - 2 * pad) / num_width_tiles)
+        real_tile_height = self.get_best_tile_size(real_tile_height, tile_size)
+        real_tile_width = self.get_best_tile_size(real_tile_width, tile_size)
