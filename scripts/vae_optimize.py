@@ -544,3 +544,7 @@ class VAEHook:
                 # if the output bbox is close to the image boundary, we extend it to the image boundary
                 output_bbox = [
                     input_bbox[0] if input_bbox[0] > pad else 0,
+                    input_bbox[1] if input_bbox[1] < w - pad else w,
+                    input_bbox[2] if input_bbox[2] > pad else 0,
+                    input_bbox[3] if input_bbox[3] < h - pad else h,
+                ]
