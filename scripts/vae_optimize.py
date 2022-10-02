@@ -534,3 +534,9 @@ class VAEHook:
             for j in range(num_width_tiles):
                 # bbox: [x1, x2, y1, y2]
                 # the padding is is unnessary for image borders. So we directly start from (32, 32)
+                input_bbox = [
+                    pad + j * real_tile_width,
+                    min(pad + (j + 1) * real_tile_width, w),
+                    pad + i * real_tile_height,
+                    min(pad + (i + 1) * real_tile_height, h),
+                ]
