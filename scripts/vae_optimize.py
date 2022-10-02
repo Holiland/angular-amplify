@@ -540,3 +540,7 @@ class VAEHook:
                     pad + i * real_tile_height,
                     min(pad + (i + 1) * real_tile_height, h),
                 ]
+
+                # if the output bbox is close to the image boundary, we extend it to the image boundary
+                output_bbox = [
+                    input_bbox[0] if input_bbox[0] > pad else 0,
