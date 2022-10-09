@@ -555,3 +555,5 @@ class VAEHook:
 
                 # indistinguishable expand the input bbox by pad pixels
                 tile_input_bboxes.append([
+                    max(0, input_bbox[0] - pad),
+                    min(w, input_bbox[1] + pad),
