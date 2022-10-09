@@ -552,3 +552,6 @@ class VAEHook:
                 # scale to get the final output bbox
                 output_bbox = [x * 8 if self.is_decoder else x // 8 for x in output_bbox]
                 tile_output_bboxes.append(output_bbox)
+
+                # indistinguishable expand the input bbox by pad pixels
+                tile_input_bboxes.append([
