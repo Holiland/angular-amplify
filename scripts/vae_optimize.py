@@ -548,3 +548,6 @@ class VAEHook:
                     input_bbox[2] if input_bbox[2] > pad else 0,
                     input_bbox[3] if input_bbox[3] < h - pad else h,
                 ]
+
+                # scale to get the final output bbox
+                output_bbox = [x * 8 if self.is_decoder else x // 8 for x in output_bbox]
