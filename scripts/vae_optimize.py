@@ -557,3 +557,6 @@ class VAEHook:
                 tile_input_bboxes.append([
                     max(0, input_bbox[0] - pad),
                     min(w, input_bbox[1] + pad),
+                    max(0, input_bbox[2] - pad),
+                    min(h, input_bbox[3] + pad),
+                ])
