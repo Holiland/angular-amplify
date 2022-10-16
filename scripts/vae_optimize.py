@@ -562,3 +562,6 @@ class VAEHook:
                 ])
 
         return tile_input_bboxes, tile_output_bboxes
+
+    @torch.inference_mode()
+    def estimate_group_norm(self, z, task_queue, color_fix):
