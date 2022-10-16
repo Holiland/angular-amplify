@@ -565,3 +565,6 @@ class VAEHook:
 
     @torch.inference_mode()
     def estimate_group_norm(self, z, task_queue, color_fix):
+        device = z.device
+        tile = z
+        last_id = len(task_queue) - 1
