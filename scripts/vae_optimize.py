@@ -560,3 +560,5 @@ class VAEHook:
                     max(0, input_bbox[2] - pad),
                     min(h, input_bbox[3] + pad),
                 ])
+
+        return tile_input_bboxes, tile_output_bboxes
