@@ -568,3 +568,7 @@ class VAEHook:
         device = z.device
         tile = z
         last_id = len(task_queue) - 1
+        while last_id >= 0 and task_queue[last_id][0] != 'pre_norm':
+            last_id -= 1
+        if last_id <= 0 or task_queue[last_id][0] != 'pre_norm':
+            raise ValueError('No group norm found in the task queue')
