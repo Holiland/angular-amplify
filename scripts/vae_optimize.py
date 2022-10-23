@@ -574,3 +574,10 @@ class VAEHook:
             raise ValueError('No group norm found in the task queue')
         # estimate until the last group norm
         for i in range(last_id + 1):
+            task = task_queue[i]
+            if task[0] == 'pre_norm':
+                group_norm_func = GroupNormParam.from_tile(tile, task[1])
+                task_queue[i] = ('apply_norm', group_norm_func)
+                if i == last_id:
+                    return True
+                tile = group_norm_func(tile)
