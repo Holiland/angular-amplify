@@ -572,3 +572,5 @@ class VAEHook:
             last_id -= 1
         if last_id <= 0 or task_queue[last_id][0] != 'pre_norm':
             raise ValueError('No group norm found in the task queue')
+        # estimate until the last group norm
+        for i in range(last_id + 1):
