@@ -587,3 +587,8 @@ class VAEHook:
                     task_id += 1
                 if task_id >= last_id:
                     continue
+                task_queue[task_id][1] = task[1](tile)
+            elif task[0] == 'add_res':
+                tile += task[1].to(device)
+                task[1] = None
+            elif color_fix and task[0] == 'downsample':
