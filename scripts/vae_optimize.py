@@ -584,3 +584,6 @@ class VAEHook:
             elif task[0] == 'store_res':
                 task_id = i + 1
                 while task_id < last_id and task_queue[task_id][0] != 'add_res':
+                    task_id += 1
+                if task_id >= last_id:
+                    continue
