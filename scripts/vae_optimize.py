@@ -592,3 +592,8 @@ class VAEHook:
                 tile += task[1].to(device)
                 task[1] = None
             elif color_fix and task[0] == 'downsample':
+                for j in range(i, last_id + 1):
+                    if task_queue[j][0] == 'store_res':
+                        task_queue[j] = ('store_res_cpu', task_queue[j][1])
+                return True
+            else:
