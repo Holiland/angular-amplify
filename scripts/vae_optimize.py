@@ -597,3 +597,9 @@ class VAEHook:
                         task_queue[j] = ('store_res_cpu', task_queue[j][1])
                 return True
             else:
+                tile = task[1](tile)
+            try:
+                devices.test_for_nans(tile, "vae")
+            except:
+                print(f'Nan detected in fast mode estimation. Fast mode disabled.')
+                return False
