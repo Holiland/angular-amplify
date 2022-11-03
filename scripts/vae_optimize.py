@@ -603,3 +603,10 @@ class VAEHook:
             except:
                 print(f'Nan detected in fast mode estimation. Fast mode disabled.')
                 return False
+
+        raise IndexError('Should not reach here')
+
+    @perfcount
+    @torch.inference_mode()
+    def vae_tile_forward(self, z):
+        """
