@@ -613,3 +613,8 @@ class VAEHook:
         Decode a latent vector z into an image in a tiled manner.
         @param z: latent vector
         @return: image
+        """
+        device = next(self.net.parameters()).device
+        net = self.net
+        tile_size = self.tile_size
+        is_decoder = self.is_decoder
