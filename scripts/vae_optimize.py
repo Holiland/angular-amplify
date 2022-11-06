@@ -610,3 +610,6 @@ class VAEHook:
     @torch.inference_mode()
     def vae_tile_forward(self, z):
         """
+        Decode a latent vector z into an image in a tiled manner.
+        @param z: latent vector
+        @return: image
