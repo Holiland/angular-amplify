@@ -618,3 +618,8 @@ class VAEHook:
         net = self.net
         tile_size = self.tile_size
         is_decoder = self.is_decoder
+
+        N, height, width = z.shape[0], z.shape[2], z.shape[3]
+        net.last_z_shape = z.shape
+
+        # Split the input into tiles and build a task queue for each tile
