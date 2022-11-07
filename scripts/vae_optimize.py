@@ -623,3 +623,7 @@ class VAEHook:
         net.last_z_shape = z.shape
 
         # Split the input into tiles and build a task queue for each tile
+        print(
+            f'[Tiled VAE]: input_size: {z.shape}, tile_size: {tile_size}, padding: {self.pad}')
+
+        in_bboxes, out_bboxes = self.split_tiles(height, width)
