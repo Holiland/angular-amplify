@@ -632,3 +632,7 @@ class VAEHook:
         tiles = []
         for input_bbox in in_bboxes:
             tile = z[:, :, input_bbox[2]:input_bbox[3],
+                     input_bbox[0]:input_bbox[1]].cpu()
+            tiles.append(tile)
+
+        num_tiles = len(tiles)
