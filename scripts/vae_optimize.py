@@ -639,3 +639,6 @@ class VAEHook:
         num_completed = 0
 
         single_task_queue = build_task_queue(net, is_decoder)
+
+        if self.fast_mode:
+            # Fast mode: downsample the input image to the tile size,
