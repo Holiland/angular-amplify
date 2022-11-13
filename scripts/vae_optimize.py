@@ -636,3 +636,6 @@ class VAEHook:
             tiles.append(tile)
 
         num_tiles = len(tiles)
+        num_completed = 0
+
+        single_task_queue = build_task_queue(net, is_decoder)
