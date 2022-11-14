@@ -642,3 +642,10 @@ class VAEHook:
 
         if self.fast_mode:
             # Fast mode: downsample the input image to the tile size,
+            # then estimate the group norm parameters on the downsampled image
+            scale_factor = tile_size / max(height, width)
+            z = z.to(device)
+            downsampled_z = F.interpolate(
+                z, scale_factor=scale_factor, mode='nearest-exact')
+            # use nearest-exact to keep statictics as close as possible
+            print(
