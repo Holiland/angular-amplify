@@ -664,3 +664,9 @@ class VAEHook:
                 downsampled_z, min=z.min(), max=z.max())
             estimate_task_queue = clone_task_queue(single_task_queue)
             if self.estimate_group_norm(downsampled_z, estimate_task_queue, color_fix=self.color_fix):
+                single_task_queue = estimate_task_queue
+
+        task_queues = [clone_task_queue(single_task_queue)
+                       for _ in range(num_tiles)]
+        # Free memory of input latent tensor
+        del z
