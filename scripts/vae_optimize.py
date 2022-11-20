@@ -656,3 +656,9 @@ class VAEHook:
             std_old, mean_old = torch.std_mean(z, dim=[0, 2, 3], keepdim=True)
             std_new, mean_new = torch.std_mean(
                 downsampled_z, dim=[0, 2, 3], keepdim=True)
+            downsampled_z = (downsampled_z - mean_new) / \
+                std_new * std_old + mean_old
+            # occasionally the std_new is too small or too large, which exceeds the range of float16
+            # so we need to clamp it to max z's range.
+            downsampled_z = torch.clamp_(
+                downsampled_z, min=z.min(), max=z.max())
