@@ -662,3 +662,5 @@ class VAEHook:
             # so we need to clamp it to max z's range.
             downsampled_z = torch.clamp_(
                 downsampled_z, min=z.min(), max=z.max())
+            estimate_task_queue = clone_task_queue(single_task_queue)
+            if self.estimate_group_norm(downsampled_z, estimate_task_queue, color_fix=self.color_fix):
