@@ -653,3 +653,6 @@ class VAEHook:
 
             # ======= Special thanks to @Kahsolt for distribution shift issue ======= #
             # The downsampling will heavily distort its mean and std, so we need to recover it.
+            std_old, mean_old = torch.std_mean(z, dim=[0, 2, 3], keepdim=True)
+            std_new, mean_new = torch.std_mean(
+                downsampled_z, dim=[0, 2, 3], keepdim=True)
