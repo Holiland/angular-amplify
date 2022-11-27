@@ -670,3 +670,6 @@ class VAEHook:
                        for _ in range(num_tiles)]
         # Free memory of input latent tensor
         del z
+        result = None
+
+        # Build task queues
