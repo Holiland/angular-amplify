@@ -673,3 +673,7 @@ class VAEHook:
         result = None
 
         # Build task queues
+
+        # Task queue execution
+        desc = f"[Tiled VAE]: Executing {'Decoder' if is_decoder else 'Encoder'} Task Queue: "
+        pbar = tqdm(total=num_tiles * len(task_queues[0]), desc=desc)
