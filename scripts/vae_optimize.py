@@ -681,3 +681,7 @@ class VAEHook:
         # execute the task back and forth when switch tiles so that we always
         # keep one tile on the GPU to reduce unnecessary data transfer
         forward = True
+        while True:
+            group_norm_param = GroupNormParam()
+            for i in range(num_tiles) if forward else reversed(range(num_tiles)):
+                if state.interrupted:
