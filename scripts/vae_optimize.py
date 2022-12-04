@@ -689,3 +689,6 @@ class VAEHook:
 
                 tile = tiles[i].to(device)
                 input_bbox = in_bboxes[i]
+                task_queue = task_queues[i]
+
+                while len(task_queue) > 0:
