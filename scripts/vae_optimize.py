@@ -685,3 +685,7 @@ class VAEHook:
             group_norm_param = GroupNormParam()
             for i in range(num_tiles) if forward else reversed(range(num_tiles)):
                 if state.interrupted:
+                    return
+
+                tile = tiles[i].to(device)
+                input_bbox = in_bboxes[i]
