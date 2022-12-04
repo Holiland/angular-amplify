@@ -692,3 +692,7 @@ class VAEHook:
                 task_queue = task_queues[i]
 
                 while len(task_queue) > 0:
+                    if state.interrupted:
+                        return
+                    # DEBUG: current task
+                    # print('Running task: ', task_queue[0][0], ' on tile ', i, '/', num_tiles, ' with shape ', tile.shape)
