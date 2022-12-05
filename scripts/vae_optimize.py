@@ -700,3 +700,7 @@ class VAEHook:
                     if task[0] == 'pre_norm':
                         group_norm_param.add_tile(tile, task[1])
                         break
+                    elif task[0] == 'store_res' or task[0] == 'store_res_cpu':
+                        task_id = 0
+                        res = task[1](tile)
+                        if not self.fast_mode or task[0] == 'store_res_cpu':
