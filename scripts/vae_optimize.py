@@ -696,3 +696,7 @@ class VAEHook:
                         return
                     # DEBUG: current task
                     # print('Running task: ', task_queue[0][0], ' on tile ', i, '/', num_tiles, ' with shape ', tile.shape)
+                    task = task_queue.pop(0)
+                    if task[0] == 'pre_norm':
+                        group_norm_param.add_tile(tile, task[1])
+                        break
