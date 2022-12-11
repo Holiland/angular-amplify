@@ -706,3 +706,5 @@ class VAEHook:
                         if not self.fast_mode or task[0] == 'store_res_cpu':
                             res = res.cpu()
                         while task_queue[task_id][0] != 'add_res':
+                            task_id += 1
+                        task_queue[task_id][1] = res
