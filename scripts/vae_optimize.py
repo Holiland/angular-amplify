@@ -708,3 +708,6 @@ class VAEHook:
                         while task_queue[task_id][0] != 'add_res':
                             task_id += 1
                         task_queue[task_id][1] = res
+                    elif task[0] == 'add_res':
+                        tile += task[1].to(device)
+                        task[1] = None
