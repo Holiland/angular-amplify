@@ -716,3 +716,5 @@ class VAEHook:
                     pbar.update(1)
 
                 # check for NaNs in the tile.
+                # If there are NaNs, we abort the process to save user's time
+                devices.test_for_nans(tile, "vae")
