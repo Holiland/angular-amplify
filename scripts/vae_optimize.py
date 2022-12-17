@@ -711,3 +711,8 @@ class VAEHook:
                     elif task[0] == 'add_res':
                         tile += task[1].to(device)
                         task[1] = None
+                    else:
+                        tile = task[1](tile)
+                    pbar.update(1)
+
+                # check for NaNs in the tile.
