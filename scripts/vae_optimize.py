@@ -721,3 +721,5 @@ class VAEHook:
 
                 if len(task_queue) == 0:
                     tiles[i] = None
+                    num_completed += 1
+                    if result is None:
