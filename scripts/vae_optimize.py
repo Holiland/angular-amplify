@@ -729,3 +729,6 @@ class VAEHook:
                 elif i == num_tiles - 1 and forward:
                     forward = False
                     tiles[i] = tile
+                elif i == 0 and not forward:
+                    forward = True
+                    tiles[i] = tile
