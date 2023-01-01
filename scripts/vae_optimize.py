@@ -742,3 +742,5 @@ class VAEHook:
             # insert the group norm task to the head of each task queue
             group_norm_func = group_norm_param.summary()
             if group_norm_func is not None:
+                for i in range(num_tiles):
+                    task_queue = task_queues[i]
