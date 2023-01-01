@@ -735,3 +735,10 @@ class VAEHook:
                 else:
                     tiles[i] = tile.cpu()
                     del tile
+
+            if num_completed == num_tiles:
+                break
+
+            # insert the group norm task to the head of each task queue
+            group_norm_func = group_norm_param.summary()
+            if group_norm_func is not None:
