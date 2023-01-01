@@ -744,3 +744,6 @@ class VAEHook:
             if group_norm_func is not None:
                 for i in range(num_tiles):
                     task_queue = task_queues[i]
+                    task_queue.insert(0, ('apply_norm', group_norm_func))
+
+        # Done!
