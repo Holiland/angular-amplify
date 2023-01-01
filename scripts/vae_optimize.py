@@ -732,3 +732,6 @@ class VAEHook:
                 elif i == 0 and not forward:
                     forward = True
                     tiles[i] = tile
+                else:
+                    tiles[i] = tile.cpu()
+                    del tile
