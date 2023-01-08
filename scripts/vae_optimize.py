@@ -747,3 +747,6 @@ class VAEHook:
                     task_queue.insert(0, ('apply_norm', group_norm_func))
 
         # Done!
+        pbar.close()
+        return result
+
