@@ -750,3 +750,8 @@ class VAEHook:
         pbar.close()
         return result
 
+
+class Script(scripts.Script):
+
+    def title(self):
+        return "Tiled VAE"
