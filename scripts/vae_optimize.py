@@ -755,3 +755,6 @@ class Script(scripts.Script):
 
     def title(self):
         return "Tiled VAE"
+
+    def show(self, is_img2img):
+        return scripts.AlwaysVisible
