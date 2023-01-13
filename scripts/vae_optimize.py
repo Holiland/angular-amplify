@@ -761,3 +761,5 @@ class Script(scripts.Script):
 
     def ui(self, is_img2img):
         with gr.Accordion('Tiled VAE', open=False):
+            with gr.Row():
+                enabled = gr.Checkbox(
