@@ -766,3 +766,9 @@ class Script(scripts.Script):
                     label='Enable', value=lambda: DEFAULT_ENABLED)
                 vae_to_gpu = gr.Checkbox(
                     label='Move VAE to GPU', value=lambda: DEFAULT_MOVE_TO_GPU)
+
+            encoder_size_tips = gr.HTML(
+                '<p style="margin-bottom:0.8em">Please use smaller tile size when see CUDA error: out of memory.</p>')
+            with gr.Row():
+                encoder_tile_size = gr.Slider(
+                    label='Encoder Tile Size', minimum=256, maximum=4096, step=16, value=lambda: DEFAULT_ENCODER_TILE_SIZE)
