@@ -772,3 +772,5 @@ class Script(scripts.Script):
             with gr.Row():
                 encoder_tile_size = gr.Slider(
                     label='Encoder Tile Size', minimum=256, maximum=4096, step=16, value=lambda: DEFAULT_ENCODER_TILE_SIZE)
+                decoder_tile_size = gr.Slider(
+                    label='Decoder Tile Size', minimum=48,  maximum=512,  step=16, value=lambda: DEFAULT_DECODER_TILE_SIZE)
