@@ -765,3 +765,4 @@ class Script(scripts.Script):
                 enabled = gr.Checkbox(
                     label='Enable', value=lambda: DEFAULT_ENABLED)
                 vae_to_gpu = gr.Checkbox(
+                    label='Move VAE to GPU', value=lambda: DEFAULT_MOVE_TO_GPU)
