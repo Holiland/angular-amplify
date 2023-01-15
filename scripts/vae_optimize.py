@@ -763,3 +763,5 @@ class Script(scripts.Script):
         with gr.Accordion('Tiled VAE', open=False):
             with gr.Row():
                 enabled = gr.Checkbox(
+                    label='Enable', value=lambda: DEFAULT_ENABLED)
+                vae_to_gpu = gr.Checkbox(
