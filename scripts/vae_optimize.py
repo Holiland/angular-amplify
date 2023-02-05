@@ -779,3 +779,5 @@ class Script(scripts.Script):
                 encoder_tile_size, decoder_tile_size])
 
             with gr.Row():
+                fast_encoder = gr.Checkbox(
+                    label='Fast Encoder', value=lambda: DEFAULT_FAST_ENCODER)
