@@ -774,3 +774,8 @@ class Script(scripts.Script):
                     label='Encoder Tile Size', minimum=256, maximum=4096, step=16, value=lambda: DEFAULT_ENCODER_TILE_SIZE)
                 decoder_tile_size = gr.Slider(
                     label='Decoder Tile Size', minimum=48,  maximum=512,  step=16, value=lambda: DEFAULT_DECODER_TILE_SIZE)
+            reset = gr.Button(value="Reset Tile Size")
+            reset.click(fn=lambda: [DEFAULT_ENCODER_TILE_SIZE, DEFAULT_DECODER_TILE_SIZE], outputs=[
+                encoder_tile_size, decoder_tile_size])
+
+            with gr.Row():
