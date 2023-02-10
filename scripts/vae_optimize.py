@@ -781,3 +781,5 @@ class Script(scripts.Script):
             with gr.Row():
                 fast_encoder = gr.Checkbox(
                     label='Fast Encoder', value=lambda: DEFAULT_FAST_ENCODER)
+                fast_decoder = gr.Checkbox(
+                    label='Fast Decoder', value=lambda: DEFAULT_FAST_DECODER)
