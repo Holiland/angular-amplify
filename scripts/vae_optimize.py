@@ -783,3 +783,8 @@ class Script(scripts.Script):
                     label='Fast Encoder', value=lambda: DEFAULT_FAST_ENCODER)
                 fast_decoder = gr.Checkbox(
                     label='Fast Decoder', value=lambda: DEFAULT_FAST_DECODER)
+
+            with gr.Row():
+                fast_encoder_tips = gr.HTML(
+                    '<p style="margin-bottom:0.8em">Fast Encoder may change colors; Can fix it with more RAM and lower speed.</p>')
+                color_fix = gr.Checkbox(
