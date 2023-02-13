@@ -792,3 +792,6 @@ class Script(scripts.Script):
 
             def on_fast_encoder(value):
                 if value:
+                    return gr.update(visible=True, interactive=True), gr.update(visible=True)
+                else:
+                    return gr.update(visible=False, interactive=False), gr.update(visible=False)
