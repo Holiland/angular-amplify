@@ -795,3 +795,5 @@ class Script(scripts.Script):
                     return gr.update(visible=True, interactive=True), gr.update(visible=True)
                 else:
                     return gr.update(visible=False, interactive=False), gr.update(visible=False)
+
+            fast_encoder.change(fn=on_fast_encoder, inputs=[fast_encoder], outputs=[
