@@ -811,3 +811,8 @@ class Script(scripts.Script):
         # save original forward (only once)
         if not hasattr(encoder, 'original_forward'):
             setattr(encoder, 'original_forward', encoder.forward)
+        if not hasattr(decoder, 'original_forward'):
+            setattr(decoder, 'original_forward', decoder.forward)
+
+        # undo hijack if disabled
+        if not enabled:
