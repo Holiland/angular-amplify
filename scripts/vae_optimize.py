@@ -797,3 +797,6 @@ class Script(scripts.Script):
                     return gr.update(visible=False, interactive=False), gr.update(visible=False)
 
             fast_encoder.change(fn=on_fast_encoder, inputs=[fast_encoder], outputs=[
+                                color_fix, fast_encoder_tips])
+
+        return [enabled, vae_to_gpu, fast_decoder, fast_encoder, color_fix, encoder_tile_size, decoder_tile_size]
