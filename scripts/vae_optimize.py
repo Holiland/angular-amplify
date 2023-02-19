@@ -800,3 +800,10 @@ class Script(scripts.Script):
                                 color_fix, fast_encoder_tips])
 
         return [enabled, vae_to_gpu, fast_decoder, fast_encoder, color_fix, encoder_tile_size, decoder_tile_size]
+
+    def process(self, p, enabled, vae_to_gpu, fast_decoder, fast_encoder, color_fix, encoder_tile_size, decoder_tile_size):
+
+        vae = p.sd_model.first_stage_model
+        # for shorthand
+        encoder = vae.encoder
+        decoder = vae.decoder
