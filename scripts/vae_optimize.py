@@ -807,3 +807,7 @@ class Script(scripts.Script):
         # for shorthand
         encoder = vae.encoder
         decoder = vae.decoder
+
+        # save original forward (only once)
+        if not hasattr(encoder, 'original_forward'):
+            setattr(encoder, 'original_forward', encoder.forward)
