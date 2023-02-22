@@ -816,3 +816,6 @@ class Script(scripts.Script):
 
         # undo hijack if disabled
         if not enabled:
+            if isinstance(encoder.forward, VAEHook): encoder.forward = encoder.original_forward
+            if isinstance(decoder.forward, VAEHook): decoder.forward = decoder.original_forward
+            return
