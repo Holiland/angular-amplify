@@ -819,3 +819,5 @@ class Script(scripts.Script):
             if isinstance(encoder.forward, VAEHook): encoder.forward = encoder.original_forward
             if isinstance(decoder.forward, VAEHook): decoder.forward = decoder.original_forward
             return
+
+        if devices.get_optimal_device == torch.device('cpu'):
