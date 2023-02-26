@@ -826,3 +826,6 @@ class Script(scripts.Script):
         if vae.device == torch.device('cpu') and not vae_to_gpu:
             print(
                 "[Tiled VAE] VAE is on CPU. Please enable 'Move VAE to GPU' to use Tiled VAE.")
+            return
+
+        # do hijack
