@@ -821,3 +821,8 @@ class Script(scripts.Script):
             return
 
         if devices.get_optimal_device == torch.device('cpu'):
+            print("[Tiled VAE] Tiled VAE is not needed as your device has no GPU VRAM.")
+            return
+        if vae.device == torch.device('cpu') and not vae_to_gpu:
+            print(
+                "[Tiled VAE] VAE is on CPU. Please enable 'Move VAE to GPU' to use Tiled VAE.")
