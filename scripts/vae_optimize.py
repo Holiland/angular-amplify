@@ -829,3 +829,4 @@ class Script(scripts.Script):
             return
 
         # do hijack
+        encoder.forward = VAEHook(
